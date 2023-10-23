@@ -60,6 +60,34 @@ const osThreadAttr_t defaultTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for CAN_TX */
+osThreadId_t CAN_TXHandle;
+const osThreadAttr_t CAN_TX_attributes = {
+  .name = "CAN_TX",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityHigh,
+};
+/* Definitions for USB_TASK */
+osThreadId_t USB_TASKHandle;
+const osThreadAttr_t USB_TASK_attributes = {
+  .name = "USB_TASK",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for MAQUINA_ESTATS */
+osThreadId_t MAQUINA_ESTATSHandle;
+const osThreadAttr_t MAQUINA_ESTATS_attributes = {
+  .name = "MAQUINA_ESTATS",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityHigh,
+};
+/* Definitions for ADC_READ */
+osThreadId_t ADC_READHandle;
+const osThreadAttr_t ADC_READ_attributes = {
+  .name = "ADC_READ",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* USER CODE BEGIN PV */
 uint32_t value_adc;
 /* USER CODE END PV */
@@ -75,6 +103,10 @@ static void MX_UART4_Init(void);
 static void MX_UART5_Init(void);
 static void MX_USB_OTG_FS_PCD_Init(void);
 void StartDefaultTask(void *argument);
+void CAN_Transmit(void *argument);
+void usb_data(void *argument);
+void maquina_estats(void *argument);
+void LECTURA_ADCs(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -147,6 +179,18 @@ int main(void)
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* creation of CAN_TX */
+  CAN_TXHandle = osThreadNew(CAN_Transmit, NULL, &CAN_TX_attributes);
+
+  /* creation of USB_TASK */
+  USB_TASKHandle = osThreadNew(usb_data, NULL, &USB_TASK_attributes);
+
+  /* creation of MAQUINA_ESTATS */
+  MAQUINA_ESTATSHandle = osThreadNew(maquina_estats, NULL, &MAQUINA_ESTATS_attributes);
+
+  /* creation of ADC_READ */
+  ADC_READHandle = osThreadNew(LECTURA_ADCs, NULL, &ADC_READ_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -248,13 +292,13 @@ static void MX_ADC1_Init(void)
   hadc1.Instance = ADC1;
   hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
-  hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
-  hadc1.Init.ContinuousConvMode = DISABLE;
+  hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
+  hadc1.Init.ContinuousConvMode = ENABLE;
   hadc1.Init.DiscontinuousConvMode = DISABLE;
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.NbrOfConversion = 2;
   hadc1.Init.DMAContinuousRequests = ENABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
@@ -264,9 +308,18 @@ static void MX_ADC1_Init(void)
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
-  sConfig.Channel = ADC_CHANNEL_0;
+  sConfig.Channel = ADC_CHANNEL_TEMPSENSOR;
   sConfig.Rank = ADC_REGULAR_RANK_1;
   sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_0;
+  sConfig.Rank = ADC_REGULAR_RANK_2;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -501,11 +554,83 @@ void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
-  for(;;)
+  for(;;)									//En aquest loop s'introdueixen les funcions que es volen dur a terme
   {
     osDelay(1);
   }
   /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_CAN_Transmit */
+/**
+* @brief Function implementing the CAN_TX thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_CAN_Transmit */
+void CAN_Transmit(void *argument)
+{
+  /* USER CODE BEGIN CAN_Transmit */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END CAN_Transmit */
+}
+
+/* USER CODE BEGIN Header_usb_data */
+/**
+* @brief Function implementing the USB_TASK thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_usb_data */
+void usb_data(void *argument)
+{
+  /* USER CODE BEGIN usb_data */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END usb_data */
+}
+
+/* USER CODE BEGIN Header_maquina_estats */
+/**
+* @brief Function implementing the MAQUINA_ESTATS thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_maquina_estats */
+void maquina_estats(void *argument)
+{
+  /* USER CODE BEGIN maquina_estats */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END maquina_estats */
+}
+
+/* USER CODE BEGIN Header_LECTURA_ADCs */
+/**
+* @brief Function implementing the ADC_READ thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_LECTURA_ADCs */
+void LECTURA_ADCs(void *argument)
+{
+  /* USER CODE BEGIN LECTURA_ADCs */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END LECTURA_ADCs */
 }
 
 /**
