@@ -90,6 +90,12 @@ const osThreadAttr_t ADC_READ_attributes = {
 };
 /* USER CODE BEGIN PV */
 uint32_t value_adc;
+CAN_RxHeaderTypeDef 	RxHeader; 			//CAN Bus Transmit Header
+CAN_TxHeaderTypeDef 	TxHeader; 			//CAN Bus Receive Header
+uint8_t 				TxData[8];  		//CAN Bus Receive Buffer
+uint8_t 				RxData[8];  		//CAN Bus Receive Buffer
+CAN_FilterTypeDef 		canfil; 			//CAN Bus Filter
+uint32_t 				TxMailbox; 			//CAN Bus Mail box variable
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -155,6 +161,47 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
   HAL_ADC_Start_DMA(&hadc1,(uint32_t*)&value_adc,1);
+
+  canfil.FilterBank = 0;
+  canfil.FilterMode = CAN_FILTERMODE_IDMASK;
+  canfil.FilterFIFOAssignment = CAN_RX_FIFO0;
+  canfil.FilterIdHigh = 0x0000;						//Si està en 0 acceptem tots els missatges
+  canfil.FilterIdLow = 0x0000;						//Si està en 0 acceptem tots els missatges
+  canfil.FilterMaskIdHigh = 0x0000;
+  canfil.FilterMaskIdLow = 0x0000;
+  canfil.FilterScale = CAN_FILTERSCALE_32BIT;
+  canfil.FilterActivation = ENABLE;
+  canfil.SlaveStartFilterBank = 14;
+
+  if(HAL_CAN_ConfigFilter(&hcan1,&canfil) != HAL_OK)
+  {
+  	Error_Handler();
+  }
+
+  if (HAL_CAN_Start(&hcan1) != HAL_OK)
+  {
+  	Error_Handler();
+  }
+
+  if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING | CAN_IT_TX_MAILBOX_EMPTY) != HAL_OK)
+      {
+      	Error_Handler();
+      }
+
+  TxHeader.DLC = 8; // Number of bites to be transmitted max- 8
+  TxHeader.IDE = CAN_ID_STD;
+  TxHeader.RTR = CAN_RTR_DATA;
+  TxHeader.StdId = 0x321;
+  TxHeader.StdId = 0x321;
+  TxHeader.TransmitGlobalTime = DISABLE;
+  TxData[0] = 1;
+  TxData[1] = 2;
+  TxData[2] = 3;
+  TxData[3] = 4;
+  TxData[4] = 5;
+  TxData[5] = 6;
+  TxData[6] = 7;
+  TxData[7] = 8;
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -211,7 +258,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
+	  HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox);
+	  HAL_Delay(500);
+	  TxData[7] = TxData[7] + 1;
   }
   /* USER CODE END 3 */
 }
@@ -540,7 +589,16 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan)
+{
+	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
+}
 
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+{
+	HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &RxHeader, RxData);
+	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
+}
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */
