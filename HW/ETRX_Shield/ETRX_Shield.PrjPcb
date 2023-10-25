@@ -593,7 +593,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document33]
-DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Electromechanical.PcbLib
+DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\e-Tech_Racing.ERR
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -610,7 +610,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document34]
-DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\e-Tech_Racing.PcbLib
+DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Electromechanical.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -627,7 +627,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document35]
-DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Filter components.PcbLib
+DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\e-Tech_Racing.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -644,7 +644,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document36]
-DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Integrated circuits.PcbLib
+DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Filter components.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -661,7 +661,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document37]
-DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Passives.PcbLib
+DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Integrated circuits.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -678,7 +678,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document38]
-DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Semiconductor.PcbLib
+DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Passives.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -695,7 +695,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document39]
-DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Sensors.PcbLib
+DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Semiconductor.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -712,7 +712,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document40]
-DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\Electromechanical.SchLib
+DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Sensors.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -729,7 +729,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document41]
-DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\e-Tech_Racing.ERR
+DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\Electromechanical.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -777,7 +777,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=LNRHNRHB
 
 [Document44]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\Integrated circuits.SchLib
@@ -811,7 +811,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=JBBPRFAR
 
 [Document46]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\Semiconductor.SchLib
@@ -1658,12 +1658,6 @@ Type127=1
 Type128=1
 Type129=1
 Type130=1
-Type131=1
-Type132=1
-Type133=1
-Type134=1
-Type135=1
-Type136=1
 
 [Difference Levels]
 Type1=1
@@ -1861,7 +1855,6 @@ Type116=2
 Type117=3
 Type118=3
 Type119=3
-MultiChannelAlternate=0
 AlternateItemFail=3
 Type122=2
 Type123=1
