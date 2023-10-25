@@ -675,7 +675,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=HHLTTDIA
 
 [Document38]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Passives.PcbLib
@@ -794,7 +794,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=QOXOPYNW
 
 [Document45]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\Passives.SchLib
@@ -832,6 +832,23 @@ DocumentUniqueId=
 
 [Document47]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\Sensors.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document48]
+DocumentPath=..\Altium Libraries\Altium_WR-PHD (rev22b).IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
