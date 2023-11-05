@@ -117,23 +117,6 @@ GenerateClassCluster=0
 DocumentUniqueId=FRHMOOJW
 
 [Document5]
-DocumentPath=..\Altium Libraries\QFP50P1600X1600X160-100N.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=BNURXAWE
-
-[Document6]
 DocumentPath=..\Altium Libraries\STM32F777VIT6.epw
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -150,41 +133,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document7]
-DocumentPath=..\Altium Libraries\STM32F777VIT6.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=AMIMWKUE
-
-[Document8]
-DocumentPath=..\Altium Libraries\CAN Transceiver.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=GDCAGLIF
-
-[Document9]
+[Document6]
 DocumentPath=..\Altium Libraries\WR-USB.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -201,7 +150,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document10]
+[Document7]
 DocumentPath=..\Altium Libraries\Altium_WS-SLSU (rev22a).IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -218,7 +167,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document11]
+[Document8]
 DocumentPath=..\Altium Libraries\Altium_WS-SW.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -235,7 +184,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document12]
+[Document9]
 DocumentPath=..\Altium Libraries\Altium_WS-SW bo.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -252,7 +201,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document13]
+[Document10]
 DocumentPath=ETRX_Shield.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -269,41 +218,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document14]
-DocumentPath=..\Altium Libraries\LEMO-EXG.0B.306.HLN\LEMO-EXG.0B.306.PCBLIB
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=LAWEJPEM
-
-[Document15]
-DocumentPath=..\Altium Libraries\LEMO-EXG.0B.306.HLN\LEMO-EXG.0B.306.SCHLIB
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=DEEXHRLQ
-
-[Document16]
+[Document11]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\e-Tech_Racing.ERR
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -320,7 +235,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document17]
+[Document12]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Electromechanical.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -337,7 +252,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=YXUHXBHX
 
-[Document18]
+[Document13]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\e-Tech_Racing.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -354,7 +269,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document19]
+[Document14]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Filter components.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -369,9 +284,9 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=DSRDPXXJ
 
-[Document20]
+[Document15]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Integrated circuits.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -388,7 +303,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HHLTTDIA
 
-[Document21]
+[Document16]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Passives.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -405,7 +320,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=DUCJCCLL
 
-[Document22]
+[Document17]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Semiconductor.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -422,7 +337,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document23]
+[Document18]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\PCB\Sensors.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -439,7 +354,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document24]
+[Document19]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\Electromechanical.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -456,7 +371,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=AQBXIDFG
 
-[Document25]
+[Document20]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\e-Tech_Racing.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -473,7 +388,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=TSRBBLSC
 
-[Document26]
+[Document21]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\Filter components.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -490,7 +405,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LNRHNRHB
 
-[Document27]
+[Document22]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\Integrated circuits.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -507,7 +422,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QOXOPYNW
 
-[Document28]
+[Document23]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\Passives.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -524,7 +439,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JBBPRFAR
 
-[Document29]
+[Document24]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\Semiconductor.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -541,7 +456,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HAZZYXZW
 
-[Document30]
+[Document25]
 DocumentPath=..\..\..\CommonFiles\Altium_Libraries_e-Tech_Racing\Schematics\Sensors.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -558,7 +473,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=IARDZSOA
 
-[Document31]
+[Document26]
 DocumentPath=..\Altium Libraries\Altium_WR-PHD (rev22b).IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
