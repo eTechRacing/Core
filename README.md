@@ -31,3 +31,6 @@ pin header excepte:
 -VBUS: es fa servir com a entrada digital per detectar si hi ha presencia d'USB.
 -NRST: pin de reset del micocontrolador. Necessari per programar. Se li posa un botó per també poder fer reset manualment.
 -Boot0: se li posa un switch per curtcircuitar a 3.3V o a GND. Això permetrà setejar al micro com a blank i poder carregar informació des del USB o programar més facilment.
+
+-LV: El "Low Voltage" es la bateria comercial de 24V (nominal) que porta el cotxe. Aquesta bateria, a la pràctica, pot entregar entre 20 i 30 V. És per aixo que l'alimentació és un punt clau.
+L'objectiu es fer una alimentació robusta, en tot el possible, lliure de soroll i de EMIs. Aixo assegurarà una sortida estable dels DCDCs.

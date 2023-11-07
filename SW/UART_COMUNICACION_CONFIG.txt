@@ -1,0 +1,47 @@
+--------------------------------------------------------------------------------
+	STM32CUBEIDE - CONFIGURACION UART CON SEÑALES DIGITALES/ANALOGICAS
+--------------------------------------------------------------------------------
+
+	NEW PROJECT > SELECIONAR PRODUCTO STM QUE SE VAYA A USAR
+
+	- Cuando se abra la consola de configuracion seleccione los pines que 
+	desea usar pulsando encima de los pines y selecionando que estado
+	quiere que usen.
+	- CUIDADO: Los pines que selecione puede que no sean compatibles ya que otros
+	subprocesos pueden ocupar esos pines.                           
+
+	PINOUT & CONFIGURATION
+	----------------------
+		· SEÑALES DIGITALES
+
+	SYSTEM CORE > GPIO (General Purpose Input Output)
+		· Se pueden modificar las caracteristicas de los 
+		pinajes a que se hayan selecionado.
+		
+			MODE	|INPUT		- 
+				|OUTPUT		-
+			---------------------------------------------------------------
+			UP/DOWN	|PULL UP	- en REPOSO se encuentra en estado HIGH.
+				|PULL DOWN	- en REPOSO se encuentra en estado LOW.
+			---------------------------------------------------------------
+			LABEL	| 		- se puede cambiar el nombre de los pinajes
+				|		para facilitar la programacion.
+
+		· SEÑALES ANALOGICAS
+	
+	SYSTEM CORE > SYS > DEBUG > SERIAL WIRE
+	ANALOG > ADCX
+
+		· COMUNICACIÓN POR PROTOCOLO UART
+
+	CONNECTIVITY > LPUART > | MODE > ASYNCHRONOUS
+				| BAUD RATE > 9600 Bits/s // 115200 Bits/s
+				| WORD LENGTH > 8 Bits (including Parity)
+				| PARITY > EVEN
+				| STOP BITS > 1
+		
+
+	CLOCK CONFIGURATION
+	-------------------
+
+		· 
