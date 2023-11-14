@@ -42,70 +42,75 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-ADC_HandleTypeDef hadc1;
+ADC_HandleTypeDef hadc1;			//ADC 1
+DMA_HandleTypeDef hdma_adc1;		//DMA from the ADC 1
 
-CAN_HandleTypeDef hcan1;
+CAN_HandleTypeDef hcan1;			//CAN
 
-UART_HandleTypeDef huart4;
+UART_HandleTypeDef huart4;			//UART
 
-PCD_HandleTypeDef hpcd_USB_OTG_FS;
+PCD_HandleTypeDef hpcd_USB_OTG_FS;	//USB (FS means FullSpeed 12Mbits/s = 1,5 MB/s)
 
-WWDG_HandleTypeDef hwwdg;
+//Defines of the tasks used by FREERTOS//
 
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
-const osThreadAttr_t defaultTask_attributes = {
-  .name = "defaultTask",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+const osThreadAttr_t defaultTask_attributes = {		//Definition of the task attributes
+  .name = "defaultTask",							//Name of the task
+  .stack_size = 128 * 4,							//Size
+  .priority = (osPriority_t) osPriorityNormal,		//Task priority
 };
+
 /* Definitions for CAN_TX */
 osThreadId_t CAN_TXHandle;
-const osThreadAttr_t CAN_TX_attributes = {
-  .name = "CAN_TX",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityHigh,
+const osThreadAttr_t CAN_TX_attributes = {			//Definition of the task attributes
+  .name = "CAN_TX",									//Name of the task
+  .stack_size = 128 * 4,							//Size
+  .priority = (osPriority_t) osPriorityHigh,		//Task priority
 };
 /* Definitions for USB_TASK */
 osThreadId_t USB_TASKHandle;
-const osThreadAttr_t USB_TASK_attributes = {
-  .name = "USB_TASK",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+const osThreadAttr_t USB_TASK_attributes = {		//Definition of the task attributes
+  .name = "USB_TASK",								//Name of the task
+  .stack_size = 128 * 4,							//Size
+  .priority = (osPriority_t) osPriorityNormal,		//Task priority
 };
 /* Definitions for MAQUINA_ESTATS */
 osThreadId_t MAQUINA_ESTATSHandle;
-const osThreadAttr_t MAQUINA_ESTATS_attributes = {
-  .name = "MAQUINA_ESTATS",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityHigh,
+const osThreadAttr_t MAQUINA_ESTATS_attributes = {	//Definition of the task attributes
+  .name = "MAQUINA_ESTATS",							//Name of the task
+  .stack_size = 128 * 4,							//Size
+  .priority = (osPriority_t) osPriorityHigh,		//Task priority
 };
 /* Definitions for ADC_READ */
 osThreadId_t ADC_READHandle;
-const osThreadAttr_t ADC_READ_attributes = {
-  .name = "ADC_READ",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+const osThreadAttr_t ADC_READ_attributes = {		//Definition of the task attributes
+  .name = "ADC_READ",								//Name of the task
+  .stack_size = 128 * 4,							//Size
+  .priority = (osPriority_t) osPriorityNormal,		//Task priority
 };
 /* USER CODE BEGIN PV */
-//CAN
-CAN_RxHeaderTypeDef 	RxHeader; 			//CAN Bus Transmit Header
-CAN_TxHeaderTypeDef 	TxHeader; 			//CAN Bus Receive Header
-uint8_t 				TxData[8];  		//CAN Bus Receive Buffer
-uint8_t 				RxData[8];  		//CAN Bus Receive Buffer
-CAN_FilterTypeDef 		canfil; 			//CAN Bus Filter
-uint32_t 				TxMailbox; 			//CAN Bus Mail box variable
-//ADC
-uint32_t LECTURES_ADC[3];					//On s'emmagatzemen les dades de les lectures de l'ADC, "2" és el nombre de canals conectats
-float CH0;									//Lectures del canal 0
-float CH1;									//Lectures del canal 1
-float Vbat;									//Lectures del canal Vbat
+//CAN variables
+CAN_RxHeaderTypeDef 	RxHeader; 					//CAN Bus Transmit Header
+CAN_TxHeaderTypeDef 	TxHeader; 					//CAN Bus Receive Header
+uint8_t 				TxData[8];  				//CAN Bus Receive Buffer
+uint8_t 				RxData[8];  				//CAN Bus Receive Buffer
+CAN_FilterTypeDef 		canfil; 					//CAN Bus Filter
+uint32_t 				TxMailbox; 					//CAN Bus Mail box variable
+
+//ADC variables
+uint32_t LECTURES_ADC[3];							//Where the data from the ADC is located, is the name of the buffer used by the ADC
+													//the number inside the claudators is the amount of channels used by the ADC
+float CH0;											//Channel 0 data. It is a float because it has to store decimal data
+float CH1;											//Channel 1 data. It is a float because it has to store decimal data
+float Vbat;											//Channel Vbat data. It is a float because it has to store decimal data
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
+//Functions declaration
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_WWDG_Init(void);
+static void MX_DMA_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_CAN1_Init(void);
 static void MX_UART4_Init(void);
@@ -129,7 +134,7 @@ void LECTURA_ADCs(void *argument);
   * @brief  The application entry point.
   * @retval int
   */
-int main(void)
+int main(void)										//Main function
 {
   /* USER CODE BEGIN 1 */
 
@@ -138,32 +143,31 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+  HAL_Init();										//Initialization of HAL
 
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
 
   /* Configure the system clock */
-  SystemClock_Config();
+  SystemClock_Config();								//Initialization of the Clock
 
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
-  MX_WWDG_Init();
-  MX_ADC1_Init();
-  MX_CAN1_Init();
-  MX_UART4_Init();
-  MX_USB_OTG_FS_PCD_Init();
-
+  MX_GPIO_Init();									//GPIO initialization
+  MX_DMA_Init();									//DMA initialization
+  MX_ADC1_Init();									//ADC 1 initialization
+  MX_CAN1_Init();									//CAN (channel 1) initialization
+  MX_UART4_Init();									//UART (channel 4) initialization
+  MX_USB_OTG_FS_PCD_Init();							//USB initialization
   /* USER CODE BEGIN 2 */
-  HAL_ADC_Start_DMA(&hadc1, LECTURES_ADC, 3); //Inicio el ADC amb el DMA, el ADC1, que guradi les dades al buffer LECTURES_ADC, que té una quantitat de mesures de 3
-
-  //HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
-  //HAL_ADC_Start_DMA(&hadc1,(uint32_t*)&value_adc,1);
+  HAL_ADC_Start_DMA(&hadc1, LECTURES_ADC, 3); 		//ADC with DMA initialization.
+  	  	  	  	  	  	  	  	  	  	  	  	  	//(&hadc1): The function uses the ADC 1
+	  	  	  	  									//LECTURES_ADC: It saves all the read data in the buffer
+  	  	  	  	  	  	  	  	  	  	  	  	  	//"3": Number of read channels by the ADC
 
   canfil.FilterBank = 0;
   canfil.FilterMode = CAN_FILTERMODE_IDMASK;
@@ -191,8 +195,8 @@ int main(void)
       	Error_Handler();
       }
 
-  TxHeader.DLC = 8; // Number of bites to be transmitted max- 8
-  TxHeader.IDE = CAN_ID_STD;
+  TxHeader.DLC = 8; 								//Number of bites to be transmitted max- 8
+  TxHeader.IDE = CAN_ID_STD;						//
   TxHeader.RTR = CAN_RTR_DATA;
   TxHeader.StdId = 0x321;
   TxHeader.StdId = 0x321;
@@ -208,7 +212,7 @@ int main(void)
   /* USER CODE END 2 */
 
   /* Init scheduler */
-  osKernelInitialize();
+  osKernelInitialize();								//FREETOS initialization
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
@@ -226,21 +230,21 @@ int main(void)
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 
-  /* Create the thread(s) */
+  /* Create the thread(s) */																//Definition of the FREERTOS functions
   /* creation of defaultTask */
-  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);			//Definition of the defaulttask function
 
   /* creation of CAN_TX */
-  CAN_TXHandle = osThreadNew(CAN_Transmit, NULL, &CAN_TX_attributes);
+  CAN_TXHandle = osThreadNew(CAN_Transmit, NULL, &CAN_TX_attributes);						//Definition of the CAN Transmit function
 
   /* creation of USB_TASK */
-  USB_TASKHandle = osThreadNew(usb_data, NULL, &USB_TASK_attributes);
+  USB_TASKHandle = osThreadNew(usb_data, NULL, &USB_TASK_attributes);						//Definition of the USB function
 
   /* creation of MAQUINA_ESTATS */
-  MAQUINA_ESTATSHandle = osThreadNew(maquina_estats, NULL, &MAQUINA_ESTATS_attributes);
+  MAQUINA_ESTATSHandle = osThreadNew(maquina_estats, NULL, &MAQUINA_ESTATS_attributes);		//Definition of the STATE_MACHINE function
 
   /* creation of ADC_READ */
-  ADC_READHandle = osThreadNew(LECTURA_ADCs, NULL, &ADC_READ_attributes);
+  ADC_READHandle = osThreadNew(LECTURA_ADCs, NULL, &ADC_READ_attributes);					//Definition of the ADC function
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -251,12 +255,12 @@ int main(void)
   /* USER CODE END RTOS_EVENTS */
 
   /* Start scheduler */
-  osKernelStart();
+  osKernelStart();										//FREERTOS beginning
 
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
+  while (1)												//Main while
   {
     /* USER CODE END WHILE */
 
@@ -270,7 +274,7 @@ int main(void)
   * @brief System Clock Configuration
   * @retval None
   */
-void SystemClock_Config(void)
+void SystemClock_Config(void)							//Clock function
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
@@ -324,14 +328,14 @@ void SystemClock_Config(void)
   * @param None
   * @retval None
   */
-static void MX_ADC1_Init(void)
+static void MX_ADC1_Init(void)							//ADC function
 {
 
   /* USER CODE BEGIN ADC1_Init 0 */
 
   /* USER CODE END ADC1_Init 0 */
 
-  //ADC_ChannelConfTypeDef sConfig = {0};
+  ADC_ChannelConfTypeDef sConfig = {0};
 
   /* USER CODE BEGIN ADC1_Init 1 */
 
@@ -348,41 +352,41 @@ static void MX_ADC1_Init(void)
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc1.Init.NbrOfConversion = 1;
-  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.NbrOfConversion = 3;
+  hadc1.Init.DMAContinuousRequests = ENABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
   {
     Error_Handler();
   }
 
-//  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
-//  */
-//  sConfig.Channel = ADC_CHANNEL_0;
-//  sConfig.Rank = ADC_REGULAR_RANK_1;
-//  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
-//  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
-//  {
-//    Error_Handler();
-//  }
-//
-//  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
-//  */
-//  sConfig.Channel = ADC_CHANNEL_1;
-//  sConfig.Rank = ADC_REGULAR_RANK_2;
-//  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
-//  {
-//    Error_Handler();
-//  }
-//
-//  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
-//  */
-//  sConfig.Channel = ADC_CHANNEL_VBAT;
-//  sConfig.Rank = ADC_REGULAR_RANK_3;
-//  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
-//  {
-//    Error_Handler();
-//  }
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_0;
+  sConfig.Rank = ADC_REGULAR_RANK_1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_1;
+  sConfig.Rank = ADC_REGULAR_RANK_2;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_VBAT;
+  sConfig.Rank = ADC_REGULAR_RANK_3;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
   /* USER CODE BEGIN ADC1_Init 2 */
 
   /* USER CODE END ADC1_Init 2 */
@@ -394,7 +398,7 @@ static void MX_ADC1_Init(void)
   * @param None
   * @retval None
   */
-static void MX_CAN1_Init(void)
+static void MX_CAN1_Init(void)							//CAN (channel 1) function
 {
 
   /* USER CODE BEGIN CAN1_Init 0 */
@@ -431,7 +435,7 @@ static void MX_CAN1_Init(void)
   * @param None
   * @retval None
   */
-static void MX_UART4_Init(void)
+static void MX_UART4_Init(void)							//UART (channel 4) function
 {
 
   /* USER CODE BEGIN UART4_Init 0 */
@@ -466,7 +470,7 @@ static void MX_UART4_Init(void)
   * @param None
   * @retval None
   */
-static void MX_USB_OTG_FS_PCD_Init(void)
+static void MX_USB_OTG_FS_PCD_Init(void)				//USB function
 {
 
   /* USER CODE BEGIN USB_OTG_FS_Init 0 */
@@ -497,32 +501,18 @@ static void MX_USB_OTG_FS_PCD_Init(void)
 }
 
 /**
-  * @brief WWDG Initialization Function
-  * @param None
-  * @retval None
+  * Enable DMA controller clock
   */
-static void MX_WWDG_Init(void)
+static void MX_DMA_Init(void)							//DMA function
 {
 
-  /* USER CODE BEGIN WWDG_Init 0 */
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA2_CLK_ENABLE();
 
-  /* USER CODE END WWDG_Init 0 */
-
-  /* USER CODE BEGIN WWDG_Init 1 */
-
-  /* USER CODE END WWDG_Init 1 */
-  hwwdg.Instance = WWDG;
-  hwwdg.Init.Prescaler = WWDG_PRESCALER_1;
-  hwwdg.Init.Window = 64;
-  hwwdg.Init.Counter = 64;
-  hwwdg.Init.EWIMode = WWDG_EWI_DISABLE;
-  if (HAL_WWDG_Init(&hwwdg) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN WWDG_Init 2 */
-
-  /* USER CODE END WWDG_Init 2 */
+  /* DMA interrupt init */
+  /* DMA2_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
 
 }
 
@@ -531,7 +521,7 @@ static void MX_WWDG_Init(void)
   * @param None
   * @retval None
   */
-static void MX_GPIO_Init(void)
+static void MX_GPIO_Init(void)							//GPIO function
 {
 /* USER CODE BEGIN MX_GPIO_Init_1 */
 /* USER CODE END MX_GPIO_Init_1 */
@@ -547,15 +537,19 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan)
+void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan)		//Completed CAN transmission function
 {
-	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
+	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);								//It changes the LED state
 }
 
-void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)			//Received CAN function
 {
-	HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &RxHeader, RxData);
-	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
+	HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &RxHeader, RxData);		//Takes the data from the CAN channel
+																		//&hadc1: The function uses the ADC 1
+																		//CAN_RX_FIFO0: Where the received data is located, a FIFO, specifically the FIFO 0
+																		//&RxHeader: CAN Bus Transmit Header
+																		//RxData: The CAN Bus Receive Buffer
+	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);								//It changes the LED state
 }
 /* USER CODE END 4 */
 
@@ -566,11 +560,11 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument)
+void StartDefaultTask(void *argument)					//StartDefaultTask function
 {
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
-  for(;;)									//En aquest loop s'introdueixen les funcions que es volen dur a terme
+  for(;;)												//Infinite loop
   {
     osDelay(1);
   }
@@ -584,11 +578,11 @@ void StartDefaultTask(void *argument)
 * @retval None
 */
 /* USER CODE END Header_CAN_Transmit */
-void CAN_Transmit(void *argument)
+void CAN_Transmit(void *argument)						//CAN Transmission function
 {
   /* USER CODE BEGIN CAN_Transmit */
   /* Infinite loop */
-  for(;;)
+  for(;;)												//Infinite loop
   {
 	  HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox);
 	  osDelay(500);
@@ -605,11 +599,11 @@ void CAN_Transmit(void *argument)
 * @retval None
 */
 /* USER CODE END Header_usb_data */
-void usb_data(void *argument)
+void usb_data(void *argument)							//USB function
 {
   /* USER CODE BEGIN usb_data */
   /* Infinite loop */
-  for(;;)
+  for(;;)												//Infinite loop
   {
     osDelay(1);
   }
@@ -623,11 +617,11 @@ void usb_data(void *argument)
 * @retval None
 */
 /* USER CODE END Header_maquina_estats */
-void maquina_estats(void *argument)
+void maquina_estats(void *argument)						//State_Machine function
 {
   /* USER CODE BEGIN maquina_estats */
   /* Infinite loop */
-  for(;;)
+  for(;;)												//Infinite loop
   {
     osDelay(1);
   }
@@ -641,19 +635,20 @@ void maquina_estats(void *argument)
 * @retval None
 */
 /* USER CODE END Header_LECTURA_ADCs */
-void LECTURA_ADCs(void *argument)
+void LECTURA_ADCs(void *argument)						//ADC Lectures function
 {
   /* USER CODE BEGIN LECTURA_ADCs */
   /* Infinite loop */
-  for(;;)
+  for(;;)												//Infinite loop
   {
-	  void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
+	  void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)							//Function called each time the ADC finished the conversions
 	  	  {
-	  	    CH0 = LECTURES_ADC[0];
-	  	    CH1 = LECTURES_ADC[1];
-	  	    Vbat = LECTURES_ADC[2];
-	  	    sprintf(stringCH0, "%f", CH0); // @suppress("Float formatting support")
-	  	    HAL_UART_Transmit(&hlpuart1, stringCH0, strlen(stringCH0), HAL_MAX_DELAY); //Fa una transmissió per UART del missatge
+	  	    CH0 = LECTURES_ADC[0];														//Defines CH0 as the position 0 of the LECTURES_ADC buffer
+	  	    CH1 = LECTURES_ADC[1];														//Defines CH1 as the position 0 of the LECTURES_ADC buffer
+	  	    Vbat = LECTURES_ADC[2];														//Defines Vbat as the position 0 of the LECTURES_ADC buffer
+	  	    																			//Vbat channel works between 1.65V and 3.6V
+	  	    sprintf(stringCH0, "%f", CH0); // @suppress("Float formatting support")		//Creates an string from each read value
+	  	    HAL_UART_Transmit(&hlpuart1, stringCH0, strlen(stringCH0), HAL_MAX_DELAY); 	//Message transmission via UART
 	  	  }
 
   }
