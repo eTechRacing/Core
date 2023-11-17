@@ -1,0 +1,56 @@
+Added Component: Designator=R1(R0805FTK)
+Add Pin To Net: Unknown Pin: Pin J3-1
+Add Pin To Net: Unknown Pin: Pin J3-2
+Add Pin To Net: Unknown Pin: Pin J3-3
+Add Pin To Net: Unknown Pin: Pin J3-4
+Add Pin To Net: Unknown Pin: Pin J3-5
+Add Pin To Net: Unknown Pin: Pin J3-6
+Add Pin To Net: Unknown Pin: Pin L301-1
+Add Pin To Net: Unknown Pin: Pin L301-2
+Add Pin To Net: Unknown Pin: Pin L301-3
+Add Pin To Net: Unknown Pin: Pin L301-4
+Add Pin To Net: Unknown Pin: Pin L302-1
+Add Pin To Net: Unknown Pin: Pin L302-2
+Add Pin To Net: Unknown Pin: Pin L302-3
+Add Pin To Net: Unknown Pin: Pin L302-4
+Added Pin To Net: NetName=LV+ in Pin=R1-1
+Added Pin To Net: NetName=VBAT Pin=R1-2
+Add Pin To Net: Unknown Pin: Pin R306-1
+Add Pin To Net: Unknown Pin: Pin R306-2
+Add Pin To Net: Unknown Pin: Pin R307-1
+Add Pin To Net: Unknown Pin: Pin R307-2
+Add Pin To Net: Unknown Pin: Pin R309-1
+Add Pin To Net: Unknown Pin: Pin R309-2
+Add Pin To Net: Unknown Pin: Pin R310-1
+Add Pin To Net: Unknown Pin: Pin R310-2
+Add Pin To Net: Unknown Pin: Pin U1-4
+Add Pin To Net: Unknown Pin: Pin U1-5
+Add Pin To Net: Unknown Pin: Pin U1-6
+Add Pin To Net: Unknown Pin: Pin U1-7
+Add Pin To Net: Unknown Pin: Pin U1-8
+Add Pin To Net: Unknown Pin: Pin U301-1
+Add Pin To Net: Unknown Pin: Pin U301-2
+Add Pin To Net: Unknown Pin: Pin U301-3
+Add Pin To Net: Unknown Pin: Pin U301-4
+Add Pin To Net: Unknown Pin: Pin U301-6
+Add Pin To Net: Unknown Pin: Pin U301-7
+Add Pin To Net: Unknown Pin: Pin U301-8
+Add Pin To Net: Unknown Pin: Pin U302-1
+Add Pin To Net: Unknown Pin: Pin U302-2
+Add Pin To Net: Unknown Pin: Pin U302-3
+Add Pin To Net: Unknown Pin: Pin U302-4
+Add Pin To Net: Unknown Pin: Pin U302-6
+Add Pin To Net: Unknown Pin: Pin U302-7
+Add Pin To Net: Unknown Pin: Pin U302-8
+Add Net: Net with name "LV tr" already exists
+Add Class Member: Failed to add class member : Component J3 6 pin header
+Add Class Member: Failed to add class member : Component L301 DLW32SH510XF2
+Add Class Member: Failed to add class member : Component L302 DLW32SH510XF2
+Added Member To Class: ClassName=ETRX_Shield Member=Component R1 549kR
+Add Class Member: Failed to add class member : Component R306 47k
+Add Class Member: Failed to add class member : Component R307 22kR
+Add Class Member: Failed to add class member : Component R309 47k
+Add Class Member: Failed to add class member : Component R310 22kR
+Add Class Member: Failed to add class member : Component U1 24AA024H-I/SN
+Add Class Member: Failed to add class member : Component U301 MCP2551 I/SN
+Add Class Member: Failed to add class member : Component U302 MCP2551 I/SN

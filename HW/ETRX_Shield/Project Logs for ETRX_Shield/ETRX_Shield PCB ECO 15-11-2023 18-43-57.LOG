@@ -1,0 +1,80 @@
+Removed Pin From Net: NetName=LV+ in Pin=D101-23
+Removed Pin From Net: NetName=+3.3 Pin=J5-1
+Removed Pin From Net: NetName=LV tr Pin=J5-2
+Removed Pin From Net: NetName=PC4 Pin=J5-5
+Removed Pin From Net: NetName=PB0 Pin=J5-6
+Removed Pin From Net: NetName=PC5 Pin=J5-7
+Removed Pin From Net: NetName=PB1 Pin=J5-8
+Removed Pin From Net: NetName=PB2 Pin=J5-10
+Removed Pin From Net: NetName=LV tr Pin=J5-11
+Removed Pin From Net: NetName=PE7 Pin=J5-12
+Removed Pin From Net: NetName=LV tr Pin=J5-13
+Removed Pin From Net: NetName=PE8 Pin=J5-14
+Removed Pin From Net: NetName=LV tr Pin=J5-15
+Removed Pin From Net: NetName=PE9 Pin=J5-16
+Removed Pin From Net: NetName=PE10 Pin=J5-18
+Removed Pin From Net: NetName=PB10 Pin=J5-19
+Removed Pin From Net: NetName=PE11 Pin=J5-20
+Removed Pin From Net: NetName=PB11 Pin=J5-21
+Removed Pin From Net: NetName=PE12 Pin=J5-22
+Removed Pin From Net: NetName=PE13 Pin=J5-24
+Removed Pin From Net: NetName=PE15 Pin=J5-25
+Removed Pin From Net: NetName=PE14 Pin=J5-26
+Removed Pin From Net: NetName=+5 Pin=J5-27
+Removed Pin From Net: NetName=PA10 Pin=J6-6
+Removed Pin From Net: NetName=PA8 Pin=J6-10
+Removed Pin From Net: NetName=PD11 Pin=J6-11
+Removed Pin From Net: NetName=PC9 Pin=J6-12
+Removed Pin From Net: NetName=PD10 Pin=J6-13
+Removed Pin From Net: NetName=PC8 Pin=J6-14
+Removed Pin From Net: NetName=PD9 Pin=J6-15
+Removed Pin From Net: NetName=PC7 Pin=J6-16
+Removed Pin From Net: NetName=PD8 Pin=J6-17
+Removed Pin From Net: NetName=PC6 Pin=J6-18
+Removed Pin From Net: NetName=PD14 Pin=J6-19
+Removed Pin From Net: NetName=PD15 Pin=J6-21
+Removed Pin From Net: NetName=PA15 Pin=J7-25
+Removed Pin From Net: NetName=GND Pin=J7-28
+Removed Pin From Net: NetName=NetDCDC101_1 Pin=TP102-23
+Removed Pin From Net: NetName=PD10 Pin=U201-78
+Add Pin To Net: Unknown Pin: Pin D101-1
+Added Pin To Net: NetName=PB0 Pin=J5-1
+Added Pin To Net: NetName=+3.3 Pin=J5-2
+Added Pin To Net: NetName=PB1 Pin=J5-3
+Added Pin To Net: NetName=PB2 Pin=J5-5
+Added Pin To Net: NetName=+5 Pin=J5-6
+Added Pin To Net: NetName=PE7 Pin=J5-7
+Added Pin To Net: NetName=PE8 Pin=J5-9
+Added Pin To Net: NetName=LV tr Pin=J5-10
+Added Pin To Net: NetName=PE9 Pin=J5-11
+Added Pin To Net: NetName=LV tr Pin=J5-12
+Added Pin To Net: NetName=PE10 Pin=J5-13
+Added Pin To Net: NetName=LV tr Pin=J5-14
+Added Pin To Net: NetName=PE11 Pin=J5-15
+Added Pin To Net: NetName=PC5 Pin=J5-16
+Added Pin To Net: NetName=PE12 Pin=J5-17
+Added Pin To Net: NetName=PC4 Pin=J5-18
+Added Pin To Net: NetName=PE13 Pin=J5-19
+Added Pin To Net: NetName=PE14 Pin=J5-21
+Added Pin To Net: NetName=PE15 Pin=J5-23
+Added Pin To Net: NetName=PB10 Pin=J5-25
+Added Pin To Net: NetName=PB11 Pin=J5-27
+Added Pin To Net: NetName=PA10 Pin=J6-4
+Added Pin To Net: NetName=PA8 Pin=J6-6
+Added Pin To Net: NetName=PC9 Pin=J6-8
+Added Pin To Net: NetName=PC8 Pin=J6-10
+Added Pin To Net: NetName=PC7 Pin=J6-12
+Added Pin To Net: NetName=PC6 Pin=J6-14
+Added Pin To Net: NetName=PD14 Pin=J6-16
+Added Pin To Net: NetName=PD15 Pin=J6-18
+Added Pin To Net: NetName=PD11 Pin=J6-20
+Added Pin To Net: NetName=PD10 Pin=J6-22
+Added Pin To Net: NetName=PD9 Pin=J6-24
+Added Pin To Net: NetName=PD8 Pin=J6-26
+Added Pin To Net: NetName=GND Pin=J7-25
+Added Pin To Net: NetName=PA15 Pin=J7-28
+Add Pin To Net: Unknown Pin: Pin TP102-1
+Added Pin To Net: NetName=PC10 Pin=U201-78
+Add Net: Net with name "LV tr" already exists
+Added Member To Class: ClassName=[2] MCU Member=Component C230 HMK432B7225KM-T
+Added Member To Class: ClassName=[3] CAN Member=Component C310 885012007057

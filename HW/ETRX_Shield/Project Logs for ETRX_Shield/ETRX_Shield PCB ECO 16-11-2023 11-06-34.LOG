@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=GND Pin=D101-2
+Add Pin To Net: Unknown Pin: Pin D101-1
+Added Pin To Net: NetName=LV+ in Pin=D101-2
+Add Pin To Net: Unknown Pin: Pin TP102-1
+Add Net: Net with name "LV tr" already exists

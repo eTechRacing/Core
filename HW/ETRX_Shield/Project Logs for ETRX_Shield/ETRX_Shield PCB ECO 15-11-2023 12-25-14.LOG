@@ -1,0 +1,28 @@
+Added Component: Designator=R306(R0805FTK)
+Added Component: Designator=R307(R0805FTK)
+Added Component: Designator=R309(R0805FTK)
+Added Component: Designator=R310(R0805FTK)
+Added Component: Designator=U1(SOIC, 8-Leads 1,27mm)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/24AA02-24LC02B-24FC02-2K-I2C-Serial-EEPROM-20001709N.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Arrow Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "24AA02-I/SN"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=CAN1_TX Pin=R306-1
+Added Pin To Net: NetName=NetQ301_B Pin=R306-2
+Added Pin To Net: NetName=NetQ301_B Pin=R307-1
+Added Pin To Net: NetName=GND Pin=R307-2
+Added Pin To Net: NetName=CAN1_RX Pin=R309-1
+Added Pin To Net: NetName=NetQ302_B Pin=R309-2
+Added Pin To Net: NetName=NetQ302_B Pin=R310-1
+Added Pin To Net: NetName=GND Pin=R310-2
+Added Pin To Net: NetName=GND Pin=U1-4
+Added Pin To Net: NetName=PD13 Pin=U1-5
+Added Pin To Net: NetName=PD12 Pin=U1-6
+Added Pin To Net: NetName=GND Pin=U1-7
+Added Pin To Net: NetName=+3.3 Pin=U1-8
+Add Net: Net with name "LV tr" already exists
+Added Member To Class: ClassName=[3] CAN Member=Component R306 47k
+Added Member To Class: ClassName=[3] CAN Member=Component R307 22kR
+Added Member To Class: ClassName=[3] CAN Member=Component R309 47k
+Added Member To Class: ClassName=[3] CAN Member=Component R310 22kR
+Added Member To Class: ClassName=ETRX_Shield Member=Component U1 24AA024H-I/SN

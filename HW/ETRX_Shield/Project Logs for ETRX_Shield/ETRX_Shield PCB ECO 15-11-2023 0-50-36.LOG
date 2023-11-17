@@ -1,0 +1,91 @@
+Change Component Comment : Designator=D106 Old Comment=824501600 New Comment=824501131
+Change component parameters: Designator = "D106" ("D106"); Footprint = "DTVS-DO-214AC"; UniqueID = "\PNBGJTEO\KUDJSFFG" ("\PNBGJTEO\KUDJSFFG")
+Change component parameters (AddParameter): Name = ".Creator"; Value = "DO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = ".PCBcheck"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = ".SCHcheck"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Category"; Value = "TVS Diodes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Clamping Voltage"; Value = "21.5V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "https://katalog.we-online.de/pbs/datasheet/824501131.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "https://katalog.we-online.de/pbs/datasheet/824501131.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/datasheets/2036399.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/datasheets/2036399.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3Description"; Value = "Where buy it"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3URL"; Value = "https://www.we-online.com/catalog/en/WE-TVSP?sq=824501131#824501131"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Wurth Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "824501131"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Breakdown Voltage"; Value = "15.15V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = "150°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Breakdown Voltage"; Value = "15.15V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = "-65°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of Bidirectional Channels"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packaging"; Value = "Cut Tape"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Peak Pulse Current"; Value = "18.6A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Peak Pulse Power"; Value = "400W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Polarity"; Value = "Bidirectional"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power Line Protection"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pricing 1"; Value = "1=0,27000 (USD)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "REACH SVHC"; Value = "Unknown"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Resistor Type"; Value = "Zener"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Reverse Standoff Voltage"; Value = "13V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Stock 1"; Value = "1000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "732-824501131CT-ND"; VariantName = "[No Variations]"
+Add Pin To Net: Unknown Pin: Pin J3-1
+Add Pin To Net: Unknown Pin: Pin J3-2
+Add Pin To Net: Unknown Pin: Pin J3-3
+Add Pin To Net: Unknown Pin: Pin J3-4
+Add Pin To Net: Unknown Pin: Pin J3-5
+Add Pin To Net: Unknown Pin: Pin J3-6
+Add Pin To Net: Unknown Pin: Pin L301-1
+Add Pin To Net: Unknown Pin: Pin L301-2
+Add Pin To Net: Unknown Pin: Pin L301-3
+Add Pin To Net: Unknown Pin: Pin L301-4
+Add Pin To Net: Unknown Pin: Pin L302-1
+Add Pin To Net: Unknown Pin: Pin L302-2
+Add Pin To Net: Unknown Pin: Pin L302-3
+Add Pin To Net: Unknown Pin: Pin L302-4
+Add Pin To Net: Unknown Pin: Pin R1-1
+Add Pin To Net: Unknown Pin: Pin R1-2
+Add Pin To Net: Unknown Pin: Pin R306-1
+Add Pin To Net: Unknown Pin: Pin R306-2
+Add Pin To Net: Unknown Pin: Pin R307-1
+Add Pin To Net: Unknown Pin: Pin R307-2
+Add Pin To Net: Unknown Pin: Pin R309-1
+Add Pin To Net: Unknown Pin: Pin R309-2
+Add Pin To Net: Unknown Pin: Pin R310-1
+Add Pin To Net: Unknown Pin: Pin R310-2
+Add Pin To Net: Unknown Pin: Pin U1-4
+Add Pin To Net: Unknown Pin: Pin U1-5
+Add Pin To Net: Unknown Pin: Pin U1-6
+Add Pin To Net: Unknown Pin: Pin U1-7
+Add Pin To Net: Unknown Pin: Pin U1-8
+Add Pin To Net: Unknown Pin: Pin U301-1
+Add Pin To Net: Unknown Pin: Pin U301-2
+Add Pin To Net: Unknown Pin: Pin U301-3
+Add Pin To Net: Unknown Pin: Pin U301-4
+Add Pin To Net: Unknown Pin: Pin U301-6
+Add Pin To Net: Unknown Pin: Pin U301-7
+Add Pin To Net: Unknown Pin: Pin U301-8
+Add Pin To Net: Unknown Pin: Pin U302-1
+Add Pin To Net: Unknown Pin: Pin U302-2
+Add Pin To Net: Unknown Pin: Pin U302-3
+Add Pin To Net: Unknown Pin: Pin U302-4
+Add Pin To Net: Unknown Pin: Pin U302-6
+Add Pin To Net: Unknown Pin: Pin U302-7
+Add Pin To Net: Unknown Pin: Pin U302-8
+Add Net: Net with name "LV tr" already exists
+Add Class Member: Failed to add class member : Component J3 6 pin header
+Add Class Member: Failed to add class member : Component L301 DLW32SH510XF2
+Add Class Member: Failed to add class member : Component L302 DLW32SH510XF2
+Add Class Member: Failed to add class member : Component R1 549kR
+Add Class Member: Failed to add class member : Component R306 47k
+Add Class Member: Failed to add class member : Component R307 22kR
+Add Class Member: Failed to add class member : Component R309 47k
+Add Class Member: Failed to add class member : Component R310 22kR
+Add Class Member: Failed to add class member : Component U1 24AA024H-I/SN
+Add Class Member: Failed to add class member : Component U301 MCP2551 I/SN
+Add Class Member: Failed to add class member : Component U302 MCP2551 I/SN

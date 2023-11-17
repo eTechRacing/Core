@@ -1,0 +1,56 @@
+Added Component: Designator=U301(SOIC, 8-Leads 1,27mm)
+Added Component: Designator=U302(SOIC, 8-Leads 1,27mm)
+Add component (AddParameter): Name = "Supplier 1"; Value = "Arrow Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "MCP2551T-I/SN"; VariantName = "[No Variations]"
+Add Pin To Net: Unknown Pin: Pin J3-1
+Add Pin To Net: Unknown Pin: Pin J3-2
+Add Pin To Net: Unknown Pin: Pin J3-3
+Add Pin To Net: Unknown Pin: Pin J3-4
+Add Pin To Net: Unknown Pin: Pin J3-5
+Add Pin To Net: Unknown Pin: Pin J3-6
+Add Pin To Net: Unknown Pin: Pin L301-1
+Add Pin To Net: Unknown Pin: Pin L301-2
+Add Pin To Net: Unknown Pin: Pin L301-3
+Add Pin To Net: Unknown Pin: Pin L301-4
+Add Pin To Net: Unknown Pin: Pin L302-1
+Add Pin To Net: Unknown Pin: Pin L302-2
+Add Pin To Net: Unknown Pin: Pin L302-3
+Add Pin To Net: Unknown Pin: Pin L302-4
+Add Pin To Net: Unknown Pin: Pin R306-1
+Add Pin To Net: Unknown Pin: Pin R306-2
+Add Pin To Net: Unknown Pin: Pin R307-1
+Add Pin To Net: Unknown Pin: Pin R307-2
+Add Pin To Net: Unknown Pin: Pin R309-1
+Add Pin To Net: Unknown Pin: Pin R309-2
+Add Pin To Net: Unknown Pin: Pin R310-1
+Add Pin To Net: Unknown Pin: Pin R310-2
+Add Pin To Net: Unknown Pin: Pin U1-4
+Add Pin To Net: Unknown Pin: Pin U1-5
+Add Pin To Net: Unknown Pin: Pin U1-6
+Add Pin To Net: Unknown Pin: Pin U1-7
+Add Pin To Net: Unknown Pin: Pin U1-8
+Added Pin To Net: NetName=CAN1_TX Pin=U301-1
+Added Pin To Net: NetName=GND Pin=U301-2
+Added Pin To Net: NetName=+5 Pin=U301-3
+Added Pin To Net: NetName=CAN1_RX Pin=U301-4
+Added Pin To Net: NetName=NetC302_2 Pin=U301-6
+Added Pin To Net: NetName=NetC301_1 Pin=U301-7
+Added Pin To Net: NetName=GND Pin=U301-8
+Added Pin To Net: NetName=CAN2_TX Pin=U302-1
+Added Pin To Net: NetName=GND Pin=U302-2
+Added Pin To Net: NetName=+5 Pin=U302-3
+Added Pin To Net: NetName=CAN2_RX Pin=U302-4
+Added Pin To Net: NetName=NetC307_2 Pin=U302-6
+Added Pin To Net: NetName=NetC306_1 Pin=U302-7
+Added Pin To Net: NetName=GND Pin=U302-8
+Add Net: Net with name "LV tr" already exists
+Add Class Member: Failed to add class member : Component J3 6 pin header
+Add Class Member: Failed to add class member : Component L301 DLW32SH510XF2
+Add Class Member: Failed to add class member : Component L302 DLW32SH510XF2
+Add Class Member: Failed to add class member : Component R306 47k
+Add Class Member: Failed to add class member : Component R307 22kR
+Add Class Member: Failed to add class member : Component R309 47k
+Add Class Member: Failed to add class member : Component R310 22kR
+Add Class Member: Failed to add class member : Component U1 24AA024H-I/SN
+Added Member To Class: ClassName=[3] CAN Member=Component U301 MCP2551 I/SN
+Added Member To Class: ClassName=[3] CAN Member=Component U302 MCP2551 I/SN

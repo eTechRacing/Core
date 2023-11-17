@@ -1,0 +1,37 @@
+Added Component: Designator=J3(61300611121)
+Added Pin To Net: NetName=+3.3 Pin=J3-1
+Added Pin To Net: NetName=SYS_JTMS-SWCLK Pin=J3-2
+Added Pin To Net: NetName=GND Pin=J3-3
+Added Pin To Net: NetName=SYS_JTMS-SWDIO Pin=J3-4
+Added Pin To Net: NetName=NRST Pin=J3-5
+Added Pin To Net: NetName=NetJ3_6 Pin=J3-6
+Add Pin To Net: Unknown Pin: Pin L301-1
+Add Pin To Net: Unknown Pin: Pin L301-2
+Add Pin To Net: Unknown Pin: Pin L301-3
+Add Pin To Net: Unknown Pin: Pin L301-4
+Add Pin To Net: Unknown Pin: Pin L302-1
+Add Pin To Net: Unknown Pin: Pin L302-2
+Add Pin To Net: Unknown Pin: Pin L302-3
+Add Pin To Net: Unknown Pin: Pin L302-4
+Add Pin To Net: Unknown Pin: Pin R306-1
+Add Pin To Net: Unknown Pin: Pin R306-2
+Add Pin To Net: Unknown Pin: Pin R307-1
+Add Pin To Net: Unknown Pin: Pin R307-2
+Add Pin To Net: Unknown Pin: Pin R309-1
+Add Pin To Net: Unknown Pin: Pin R309-2
+Add Pin To Net: Unknown Pin: Pin R310-1
+Add Pin To Net: Unknown Pin: Pin R310-2
+Add Pin To Net: Unknown Pin: Pin U1-4
+Add Pin To Net: Unknown Pin: Pin U1-5
+Add Pin To Net: Unknown Pin: Pin U1-6
+Add Pin To Net: Unknown Pin: Pin U1-7
+Add Pin To Net: Unknown Pin: Pin U1-8
+Add Net: Net with name "LV tr" already exists
+Added Member To Class: ClassName=ETRX_Shield Member=Component J3 6 pin header
+Add Class Member: Failed to add class member : Component L301 DLW32SH510XF2
+Add Class Member: Failed to add class member : Component L302 DLW32SH510XF2
+Add Class Member: Failed to add class member : Component R306 47k
+Add Class Member: Failed to add class member : Component R307 22kR
+Add Class Member: Failed to add class member : Component R309 47k
+Add Class Member: Failed to add class member : Component R310 22kR
+Add Class Member: Failed to add class member : Component U1 24AA024H-I/SN

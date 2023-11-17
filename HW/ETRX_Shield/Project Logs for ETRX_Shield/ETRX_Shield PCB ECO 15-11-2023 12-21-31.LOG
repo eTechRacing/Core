@@ -1,0 +1,37 @@
+Added Component: Designator=L301(CMC-51uH Choke)
+Add component (AddParameter): Name = "Specifications sheet"; Value = "https://www.murata.com/products/productdata/8804914298910/QFLC9127.pdf?1681702277000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "81-DLW32SH510XF2L"; VariantName = "[No Variations]"
+Added Component: Designator=L302(CMC-51uH Choke)
+Add component (AddParameter): Name = "Specifications sheet"; Value = "https://www.murata.com/products/productdata/8804914298910/QFLC9127.pdf?1681702277000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "81-DLW32SH510XF2L"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC301_1 Pin=L301-1
+Added Pin To Net: NetName=NetC302_2 Pin=L301-2
+Added Pin To Net: NetName=CAN1_L Pin=L301-3
+Added Pin To Net: NetName=CAN1_H Pin=L301-4
+Added Pin To Net: NetName=NetC306_1 Pin=L302-1
+Added Pin To Net: NetName=NetC307_2 Pin=L302-2
+Added Pin To Net: NetName=CAN2_L Pin=L302-3
+Added Pin To Net: NetName=CAN2_H Pin=L302-4
+Add Pin To Net: Unknown Pin: Pin R306-1
+Add Pin To Net: Unknown Pin: Pin R306-2
+Add Pin To Net: Unknown Pin: Pin R307-1
+Add Pin To Net: Unknown Pin: Pin R307-2
+Add Pin To Net: Unknown Pin: Pin R309-1
+Add Pin To Net: Unknown Pin: Pin R309-2
+Add Pin To Net: Unknown Pin: Pin R310-1
+Add Pin To Net: Unknown Pin: Pin R310-2
+Add Pin To Net: Unknown Pin: Pin U1-4
+Add Pin To Net: Unknown Pin: Pin U1-5
+Add Pin To Net: Unknown Pin: Pin U1-6
+Add Pin To Net: Unknown Pin: Pin U1-7
+Add Pin To Net: Unknown Pin: Pin U1-8
+Add Net: Net with name "LV tr" already exists
+Added Member To Class: ClassName=[3] CAN Member=Component L301 DLW32SH510XF2
+Added Member To Class: ClassName=[3] CAN Member=Component L302 DLW32SH510XF2
+Add Class Member: Failed to add class member : Component R306 47k
+Add Class Member: Failed to add class member : Component R307 22kR
+Add Class Member: Failed to add class member : Component R309 47k
+Add Class Member: Failed to add class member : Component R310 22kR
+Add Class Member: Failed to add class member : Component U1 24AA024H-I/SN
