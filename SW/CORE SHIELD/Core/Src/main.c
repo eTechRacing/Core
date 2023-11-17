@@ -98,6 +98,7 @@ uint8_t 				RxData[8];  				//CAN Bus Receive Buffer
 CAN_FilterTypeDef 		canfil; 					//CAN Bus Filter
 uint32_t 				TxMailbox; 					//CAN Bus Mail box variable
 
+
 //ADC variables
 uint32_t LECTURES_ADC[3];							//Where the data from the ADC is located, is the name of the buffer used by the ADC
 													//the number inside the claudators is the amount of channels used by the ADC
