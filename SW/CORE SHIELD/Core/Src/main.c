@@ -175,7 +175,7 @@ int main(void)										//Main function
   canfil.FilterMode = CAN_FILTERMODE_IDMASK;
   canfil.FilterFIFOAssignment = CAN_RX_FIFO0;
   canfil.FilterIdHigh = 0x0000;						//Si està en 0 acceptem tots els missatges
-  canfil.FilterIdLow = 0x0000;						//Si està en 0 acceptem tots els missatges
+  canfil.FilterIdLow = 0x0000;						//Si està en 0 acceptem tots els missatges.
   canfil.FilterMaskIdHigh = 0x0000;
   canfil.FilterMaskIdLow = 0x0000;
   canfil.FilterScale = CAN_FILTERSCALE_32BIT;
