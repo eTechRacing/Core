@@ -68,8 +68,8 @@ all: main-build
 main-build: CORE\ SHIELD.elf secondary-outputs
 
 # Tool invocations
-CORE\ SHIELD.elf CORE\ SHIELD.map: $(OBJS) $(USER_OBJS) F:\SW\ Github\Shield\SW\CORE\ SHIELD\STM32F777VITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "CORE SHIELD.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"F:\SW Github\Shield\SW\CORE SHIELD\STM32F777VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CORE SHIELD.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+CORE\ SHIELD.elf CORE\ SHIELD.map: $(OBJS) $(USER_OBJS) C:\Users\Bernat\Documents\GitHub\Shield\SW\CORE\ SHIELD\STM32F777VITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "CORE SHIELD.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Bernat\Documents\GitHub\Shield\SW\CORE SHIELD\STM32F777VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CORE SHIELD.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

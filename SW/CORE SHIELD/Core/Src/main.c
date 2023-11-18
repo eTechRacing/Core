@@ -146,47 +146,48 @@ int main(void)
   	  	  	  	  	  	  	  	  	  	  	  	  		//(&hadc1): The function uses the ADC 1
 	  	  	  	  										//LECTURES_ADC: It saves all the read data in the buffer
   	  	  	  	  	  	  	  	  	  	  	  	  		//"ADC_BUF_LEN": Number of read channels by the ADC..
+//Receiving filter configuration
+  canfil.FilterBank = 0;								//This refers to which filter is being configured. On this case is the filter number 0
+  canfil.FilterMode = CAN_FILTERMODE_IDMASK;			//FilterMode: How are we filtering the incoming messages. Only the messages that coincide with the mask and the filter are accepted
+  canfil.FilterFIFOAssignment = CAN_RX_FIFO0;			//Defines at which FIFO is this filter being configured to. In this case is the FIFO 0.
+  canfil.FilterIdHigh = 0x0000;							//MSB: Most Significant Bit. When it's in 0, accepts all the messages
+  canfil.FilterIdLow = 0x0000;							//LSB: Least Significant Bit. When it's in 0, accepts all the messages
+  canfil.FilterMaskIdHigh = 0x0000;						//Most Significant Bit of the mask. When it's in 0, accepts all the messages
+  canfil.FilterMaskIdLow = 0x0000;						//Least Significant Bit of the mask. When it's in 0, accepts all the messages
+  canfil.FilterScale = CAN_FILTERSCALE_32BIT;			//Defines the Filter Scale. It will use the 32 bits of the mask and the identifier
+  canfil.FilterActivation = ENABLE;						//This activates the filter as it is enable
+  canfil.SlaveStartFilterBank = 14;						//Indicates the first filter slave number. In this case it is the principal filter.
 
-  canfil.FilterBank = 0;
-  canfil.FilterMode = CAN_FILTERMODE_IDMASK;
-  canfil.FilterFIFOAssignment = CAN_RX_FIFO0;
-  canfil.FilterIdHigh = 0x0000;						//Si està en 0 acceptem tots els missatges
-  canfil.FilterIdLow = 0x0000;						//Si està en 0 acceptem tots els missatges.
-  canfil.FilterMaskIdHigh = 0x0000;
-  canfil.FilterMaskIdLow = 0x0000;
-  canfil.FilterScale = CAN_FILTERSCALE_32BIT;
-  canfil.FilterActivation = ENABLE;
-  canfil.SlaveStartFilterBank = 14;
-
-  if(HAL_CAN_ConfigFilter(&hcan1,&canfil) != HAL_OK)
+//CAN controller configuration
+  if(HAL_CAN_ConfigFilter(&hcan1,&canfil) != HAL_OK) 	//Configures the CAN controller filter
   {
-  	Error_Handler();
+  	Error_Handler();									//If the action goes wrong, call the Error_Handler function
   }
 
-  if (HAL_CAN_Start(&hcan1) != HAL_OK)
+  if (HAL_CAN_Start(&hcan1) != HAL_OK)					//Initiates the CAN controller
   {
-  	Error_Handler();
+  	Error_Handler();									//If the action goes wrong, call the Error_Handler function
   }
 
-  if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING | CAN_IT_TX_MAILBOX_EMPTY) != HAL_OK)
+  if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING | CAN_IT_TX_MAILBOX_EMPTY) != HAL_OK) //It activates the FIFO pending messages and empty mailboxes interruptions
       {
-      	Error_Handler();
+      	Error_Handler();								//If the action goes wrong, call the Error_Handler function
       }
 
-  TxHeader.DLC = 8; 								//Number of bites to be transmitted max- 8
-  TxHeader.IDE = CAN_ID_STD;						//
-  TxHeader.RTR = CAN_RTR_DATA;
-  TxHeader.StdId = 0x321;
-  TxHeader.StdId = 0x321;
-  TxHeader.TransmitGlobalTime = DISABLE;
-  TxData[0] = 1;
-  TxData[1] = 2;
-  TxData[2] = 3;
-  TxData[3] = 4;
-  TxData[4] = 5;
-  TxData[5] = 6;
-  TxData[6] = 7;
-  TxData[7] = 8;
+//Transmission configuration
+  TxHeader.DLC = 8; 									//Number of bites to be transmitted max- 8. DLC: Data Length Code
+  TxHeader.IDE = CAN_ID_STD;							//IDE: Identifier Extension. ID_STD: Standard Identifier. Dominant(0) = 11 bit ID, Recessive(1) = 29 bit ID
+  TxHeader.RTR = CAN_RTR_DATA;							//RTR: Remote Transmission Request, Dominant(0) = Data frame, Recessive (1) = Remote Frame. Type of trace
+  TxHeader.StdId = 0x321;								//Standard identifier ID
+  TxHeader.TransmitGlobalTime = DISABLE;				//A temporal mark in the CAN message is not added
+  TxData[0] = 1;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[1] = 2;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[2] = 3;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[3] = 4;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[4] = 5;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[5] = 6;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[6] = 7;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[7] = 8;										//Sent data. The TxData is the buffer where the data is saved
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -533,7 +534,7 @@ void CAN_Transmit(void *argument)
   /* Infinite loop */
   for(;;)												//Infinite loop
   {
-	  HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox);
+	  HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox);	//Calls
 	  osDelay(500);
 	  TxData[7] = TxData[7] + 1;
 	  osDelay(1);
