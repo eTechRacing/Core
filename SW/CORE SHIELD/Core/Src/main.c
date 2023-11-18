@@ -532,12 +532,12 @@ void CAN_Transmit(void *argument)
 {
   /* USER CODE BEGIN CAN_Transmit */
   /* Infinite loop */
-  for(;;)												//Infinite loop
+  for(;;)															//Infinite loop
   {
-	  HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox);	//Calls
-	  osDelay(500);
-	  TxData[7] = TxData[7] + 1;
-	  osDelay(1);
+	  HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox);	//Adds a message to the sending queue of the CAN controller
+	  osDelay(500);													//Freertos delay of 500ms
+	  TxData[7] = TxData[7] + 1;									//Adds 1 to the seventh element of the TxData buffer each time the loop is repeated
+	  osDelay(1);													//Freertos delay of 1ms
   }
   /* USER CODE END CAN_Transmit */
 }
