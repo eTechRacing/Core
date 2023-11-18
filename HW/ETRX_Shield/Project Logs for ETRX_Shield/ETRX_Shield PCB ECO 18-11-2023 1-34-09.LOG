@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=LV tr Pin=J6-9
+Added Pin To Net: NetName=LV tr Pin=J6-11
+Added Pin To Net: NetName=LV tr Pin=J6-13
+Added Pin To Net: NetName=GND Pin=J6-23
+Added Member To Class: ClassName=[1] Supply Member=Component TP102 TestPoint

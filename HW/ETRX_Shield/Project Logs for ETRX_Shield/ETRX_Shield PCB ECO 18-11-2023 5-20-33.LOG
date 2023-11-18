@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=PD14 Pin=J6-14
+Removed Pin From Net: NetName=PD15 Pin=J6-16
+Added Pin To Net: NetName=PD15 Pin=J6-14
+Added Pin To Net: NetName=PD14 Pin=J6-16
+Added Member To Class: ClassName=ETRX_Shield Member=Component U1 24AA024H-I/SN
