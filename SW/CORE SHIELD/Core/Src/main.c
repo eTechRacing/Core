@@ -96,7 +96,7 @@ CAN_TxHeaderTypeDef 	TxHeader; 					//CAN Bus Receive Header
 uint8_t 				TxData[8];  				//CAN Bus Receive Buffer
 uint8_t 				RxData[8];  				//CAN Bus Receive Buffer
 CAN_FilterTypeDef 		canfil; 					//CAN Bus Filter
-uint32_t 				TxMailbox; 					//CAN Bus Mail box variable
+uint32_t 				TxMailbox; 					//CAN Bus Mail box variable.
 
 
 //ADC variables
