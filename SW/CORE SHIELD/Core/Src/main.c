@@ -72,7 +72,7 @@ const osThreadAttr_t CAN_TX_attributes = {			//Definition of the task attributes
 osThreadId_t USB_TASKHandle;
 const osThreadAttr_t USB_TASK_attributes = {		//Definition of the task attributes
   .name = "USB_TASK",								//Name of the task
-  .stack_size = 128 * 4,							//Size
+  .stack_size = 128 * 4,							//Size.
   .priority = (osPriority_t) osPriorityNormal,		//Task priority
 };
 /* Definitions for MAQUINA_ESTATS */
