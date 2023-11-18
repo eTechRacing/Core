@@ -169,7 +169,7 @@ int main(void)										//Main function
   HAL_ADC_Start_DMA(&hadc1, LECTURES_ADC, 3); 		//ADC with DMA initialization.
   	  	  	  	  	  	  	  	  	  	  	  	  	//(&hadc1): The function uses the ADC 1
 	  	  	  	  									//LECTURES_ADC: It saves all the read data in the buffer
-  	  	  	  	  	  	  	  	  	  	  	  	  	//"3": Number of read channels by the ADC
+  	  	  	  	  	  	  	  	  	  	  	  	  	//"3": Number of read channels by the ADC.
 
   canfil.FilterBank = 0;
   canfil.FilterMode = CAN_FILTERMODE_IDMASK;
