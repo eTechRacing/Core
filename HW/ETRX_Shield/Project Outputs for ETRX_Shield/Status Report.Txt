@@ -1,0 +1,10 @@
+Output: Export STEP
+Type  : ExportSTEP
+From  : Variant [[No Variations]] of PCB Document [ETRX_Shield.PcbDoc]
+   Generated File[ETRX_Shield.step]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 23:21:35 On 19/11/2023

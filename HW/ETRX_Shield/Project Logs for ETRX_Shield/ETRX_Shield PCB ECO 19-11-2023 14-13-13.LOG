@@ -1,0 +1,15 @@
+Change Component Footprint: Designator=C201 Old Footprint=C2.2u-100V-1812MLCC-X7R New Footprint=C0805FNPC-W
+Change Component Footprint: Designator=C202 Old Footprint=C2.2u-100V-1812MLCC-X7R New Footprint=C0805FNPC-W
+Change Component Footprint: Designator=C229 Old Footprint=C2.2u-100V-1812MLCC-X7R New Footprint=C0805FNPC-W
+Change Component Footprint: Designator=C230 Old Footprint=C2.2u-100V-1812MLCC-X7R New Footprint=C0805FNPC-W
+Change Component Comment : Designator=C201 Old Comment=HMK432B7225KM-T New Comment=2.2uF
+Change Component Comment : Designator=C202 Old Comment=HMK432B7225KM-T New Comment=2.2uF
+Change Component Comment : Designator=C229 Old Comment=HMK432B7225KM-T New Comment=2.2uF
+Change Component Comment : Designator=C230 Old Comment=HMK432B7225KM-T New Comment=2.2uF
+Change Component Kind : Designator=J101 Old Kind=Jumper New Kind=Standard
+Change Component Kind : Designator=J8 Old Kind=Jumper New Kind=Standard
+Change Component Kind : Designator=J3 Old Kind=Jumper New Kind=Standard
+Change component parameters: Designator = "C201" ("C201"); Footprint = "C2.2u-100V-1812MLCC-X7R"; UniqueID = "\QYUJLQUE\FVTIAMIM" ("\QYUJLQUE\FVTIAMIM")
+Change component parameters: Designator = "C202" ("C202"); Footprint = "C2.2u-100V-1812MLCC-X7R"; UniqueID = "\QYUJLQUE\LJNXPMET" ("\QYUJLQUE\LJNXPMET")
+Change component parameters: Designator = "C229" ("C229"); Footprint = "C2.2u-100V-1812MLCC-X7R"; UniqueID = "\QYUJLQUE\VHFEJBOE" ("\QYUJLQUE\VHFEJBOE")
+Change component parameters: Designator = "C230" ("C230"); Footprint = "C2.2u-100V-1812MLCC-X7R"; UniqueID = "\QYUJLQUE\LNPKZGKI" ("\QYUJLQUE\LNPKZGKI")
