@@ -509,23 +509,6 @@ GenerateClassCluster=0
 DocumentUniqueId=JNQFHVFS
 
 [Document28]
-DocumentPath=ETR_Shield_JobConfig.OutJob
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document29]
 DocumentPath=ETRX_Shield.PCBDwf
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -542,7 +525,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=XPOWXBLU
 
-[Document30]
+[Document29]
 DocumentPath=ETRX_Shield_BOM.BomDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -559,7 +542,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document31]
+[Document30]
 DocumentPath=ETRX_Shield_gran.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -585,127 +568,67 @@ DocumentPath=Project Outputs for ETRX_Shield\NC Drill\ETRX_Shield.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Free Documents\NC Drill\ETRX_Shield.DRR
-DItemRevisionGUID=
-
-[GeneratedDocument4]
 DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.EXTREP
 DItemRevisionGUID=
 
-[GeneratedDocument5]
-DocumentPath=Project Outputs for Free Documents\Gerber\ETRX_Shield.EXTREP
-DItemRevisionGUID=
-
-[GeneratedDocument6]
+[GeneratedDocument4]
 DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.G1
 DItemRevisionGUID=
 
-[GeneratedDocument7]
-DocumentPath=Project Outputs for Free Documents\Gerber\ETRX_Shield.G1
-DItemRevisionGUID=
-
-[GeneratedDocument8]
+[GeneratedDocument5]
 DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.G2
 DItemRevisionGUID=
 
-[GeneratedDocument9]
-DocumentPath=Project Outputs for Free Documents\Gerber\ETRX_Shield.G2
-DItemRevisionGUID=
-
-[GeneratedDocument10]
+[GeneratedDocument6]
 DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBL
 DItemRevisionGUID=
 
-[GeneratedDocument11]
-DocumentPath=Project Outputs for Free Documents\Gerber\ETRX_Shield.GBL
-DItemRevisionGUID=
-
-[GeneratedDocument12]
+[GeneratedDocument7]
 DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBO
 DItemRevisionGUID=
 
-[GeneratedDocument13]
-DocumentPath=Project Outputs for Free Documents\Gerber\ETRX_Shield.GBO
-DItemRevisionGUID=
-
-[GeneratedDocument14]
+[GeneratedDocument8]
 DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBP
 DItemRevisionGUID=
 
-[GeneratedDocument15]
-DocumentPath=Project Outputs for Free Documents\Gerber\ETRX_Shield.GBP
-DItemRevisionGUID=
-
-[GeneratedDocument16]
+[GeneratedDocument9]
 DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBS
 DItemRevisionGUID=
 
-[GeneratedDocument17]
-DocumentPath=Project Outputs for Free Documents\Gerber\ETRX_Shield.GBS
-DItemRevisionGUID=
-
-[GeneratedDocument18]
+[GeneratedDocument10]
 DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GM
 DItemRevisionGUID=
 
-[GeneratedDocument19]
-DocumentPath=Project Outputs for Free Documents\Gerber\ETRX_Shield.GM
-DItemRevisionGUID=
-
-[GeneratedDocument20]
+[GeneratedDocument11]
 DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTL
 DItemRevisionGUID=
 
-[GeneratedDocument21]
-DocumentPath=Project Outputs for Free Documents\Gerber\ETRX_Shield.GTL
-DItemRevisionGUID=
-
-[GeneratedDocument22]
+[GeneratedDocument12]
 DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTO
 DItemRevisionGUID=
 
-[GeneratedDocument23]
-DocumentPath=Project Outputs for Free Documents\Gerber\ETRX_Shield.GTO
-DItemRevisionGUID=
-
-[GeneratedDocument24]
+[GeneratedDocument13]
 DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTP
 DItemRevisionGUID=
 
-[GeneratedDocument25]
-DocumentPath=Project Outputs for Free Documents\Gerber\ETRX_Shield.GTP
-DItemRevisionGUID=
-
-[GeneratedDocument26]
+[GeneratedDocument14]
 DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTS
 DItemRevisionGUID=
 
-[GeneratedDocument27]
-DocumentPath=Project Outputs for Free Documents\Gerber\ETRX_Shield.GTS
-DItemRevisionGUID=
-
-[GeneratedDocument28]
+[GeneratedDocument15]
 DocumentPath=Project Outputs for ETRX_Shield\NC Drill\ETRX_Shield.LDP
 DItemRevisionGUID=
 
-[GeneratedDocument29]
+[GeneratedDocument16]
 DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.REP
 DItemRevisionGUID=
 
-[GeneratedDocument30]
+[GeneratedDocument17]
 DocumentPath=Project Outputs for ETRX_Shield\ExportSTEP\ETRX_Shield.step
 DItemRevisionGUID=
 
-[GeneratedDocument31]
-DocumentPath=Project Outputs for Free Documents\ExportSTEP\ETRX_Shield.step
-DItemRevisionGUID=
-
-[GeneratedDocument32]
+[GeneratedDocument18]
 DocumentPath=Project Outputs for ETRX_Shield\NC Drill\ETRX_Shield.TXT
-DItemRevisionGUID=
-
-[GeneratedDocument33]
-DocumentPath=Project Outputs for Free Documents\NC Drill\ETRX_Shield.TXT
 DItemRevisionGUID=
 
 [Parameter1]
@@ -1376,36 +1299,6 @@ OutputName12=Web Review Data
 OutputDocumentPath12=
 OutputVariantName12=
 OutputDefault12=0
-OutputType13=Ansoft Neutral
-OutputName13=Ansoft Neutral (AutoPCB)
-OutputDocumentPath13=
-OutputVariantName13=
-OutputDefault13=0
-OutputType14=HyperLynx
-OutputName14=HyperLynx (AutoPCB)
-OutputDocumentPath14=
-OutputVariantName14=
-OutputDefault14=0
-OutputType15=Orcad v7 Capture Design
-OutputName15=Orcad v7 Capture Design (AutoSCH)
-OutputDocumentPath15=
-OutputVariantName15=
-OutputDefault15=0
-OutputType16=P-CAD ASCII
-OutputName16=P-CAD ASCII (AutoPCB)
-OutputDocumentPath16=
-OutputVariantName16=
-OutputDefault16=0
-OutputType17=P-CAD V16 Schematic Design
-OutputName17=P-CAD V16 Schematic Design (AutoSCH)
-OutputDocumentPath17=
-OutputVariantName17=
-OutputDefault17=0
-OutputType18=SiSoft
-OutputName18=SiSoft (AutoPCB)
-OutputDocumentPath18=
-OutputVariantName18=
-OutputDefault18=0
 
 [OutputGroup10]
 Name=PostProcess Outputs

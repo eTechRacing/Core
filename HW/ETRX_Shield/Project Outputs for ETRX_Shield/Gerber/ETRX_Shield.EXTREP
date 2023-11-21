@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------
-Gerber File Extension Report For: ETRX_Shield.GBR   19/11/2023  23:21:15
+Gerber File Extension Report For: ETRX_Shield.GBR   20/11/2023  23:44:55
 ------------------------------------------------------------------------------------------
 
 
@@ -16,5 +16,6 @@ Layer Extension     Layer Description
 .GBS                Bottom Solder                           
 .GBP                Bottom Paste                            
 .GBO                Bottom Overlay                          
+.GM1                Mechanical 1                            
 .GM                 Profile                                 
 ------------------------------------------------------------------------------------------

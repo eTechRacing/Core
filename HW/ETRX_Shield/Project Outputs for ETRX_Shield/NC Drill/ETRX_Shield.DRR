@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: ETRX_Shield.PcbDoc   19/11/2023  23:21:16
+NCDrill File Report For: ETRX_Shield.PcbDoc   20/11/2023  23:44:56
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -7,7 +7,7 @@ ASCII RoundHoles File : ETRX_Shield.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      0.3mm (12mil)                                             Round             238       PTH        729.61mm (28.72inch)
+T1      0.3mm (12mil)                                             Round             239       PTH        729.84mm (28.73inch)
 T2      0.5mm (20mil)                                             Round             43        PTH        283.19mm (11.15inch)
 T3      0.8mm (31mil)                                             Round             2         PTH        6.25mm (0.25inch)
 T4      1mm (39mil)                                               Round             3         PTH        5.08mm (0.20inch)
@@ -16,6 +16,6 @@ T6      1.2mm (47mil)                                             Round         
 T7      3.2mm (126mil)                                            Round             4         PTH        150.00mm (5.91inch)
 T8      0.7mm (28mil)                                             Round             2         NPTH       4.15mm (0.16inch)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              311
+Totals                                                                              312
 
 Total Processing Time (hh:mm:ss) : 00:00:00
