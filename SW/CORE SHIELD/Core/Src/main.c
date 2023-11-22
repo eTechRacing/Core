@@ -487,6 +487,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)			//Received CAN
 																		//CAN_RX_FIFO0: Where the received data is located, a FIFO, specifically the FIFO 0
 																		//&RxHeader: CAN Bus Transmit Header
 																		//RxData: The CAN Bus Receive Buffer
+	HAL_UART_Transmit(&huart4, RxData, strlen((char*)RxData), HAL_MAX_DELAY);
 	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);								//It changes the LED state
 }
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)					//Function called each time the ADC finished the conversions
