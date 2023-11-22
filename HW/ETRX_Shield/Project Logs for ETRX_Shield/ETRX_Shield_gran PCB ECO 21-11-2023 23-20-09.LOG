@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=GND Pin=C201-1
+Removed Pin From Net: NetName=GND Pin=C202-1
+Removed Pin From Net: NetName=GND Pin=C202-2
+Removed Pin From Net: NetName=GND Pin=C229-1
+Removed Pin From Net: NetName=GND Pin=C230-1
+Removed Pin From Net: NetName=GND Pin=C230-2
+Removed Pin From Net: NetName=GND Pin=U201-48
+Removed Pin From Net: NetName=GND Pin=U201-73
+Removed Member From Class: ClassName=[2] MCU Member=C229
+Removed Member From Class: ClassName=[2] MCU Member=C230
+Change Component Designator: OldDesignator=C229 NewDesignator=C202
+Added Pin To Net: NetName=NetC201_1 Pin=C201-1
+Added Pin To Net: NetName=NetC201_1 Pin=U201-73
+Added Net: Name=NetC201_1
+Added Pin To Net: NetName=NetC202_1 Pin=C202-1
+Added Pin To Net: NetName=NetC202_1 Pin=U201-48
+Added Net: Name=NetC202_1
