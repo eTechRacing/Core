@@ -1,0 +1,19 @@
+Removed Pin From Net: NetName=PD7 Pin=J7-3
+Removed Pin From Net: NetName=PD6 Pin=J7-5
+Removed Pin From Net: NetName=PD5 Pin=J7-7
+Removed Pin From Net: NetName=PD4 Pin=J7-9
+Removed Pin From Net: NetName=PD3 Pin=J7-11
+Removed Pin From Net: NetName=PD2 Pin=J7-13
+Removed Pin From Net: NetName=GND Pin=J7-15
+Removed Pin From Net: NetName=LV tr Pin=J7-17
+Removed Pin From Net: NetName=LV tr Pin=J7-19
+Removed Pin From Net: NetName=LV tr Pin=J7-21
+Added Pin To Net: NetName=LV tr Pin=J7-5
+Added Pin To Net: NetName=LV tr Pin=J7-7
+Added Pin To Net: NetName=LV tr Pin=J7-9
+Added Pin To Net: NetName=PD7 Pin=J7-11
+Added Pin To Net: NetName=PD6 Pin=J7-13
+Added Pin To Net: NetName=PD5 Pin=J7-15
+Added Pin To Net: NetName=PD4 Pin=J7-17
+Added Pin To Net: NetName=PD3 Pin=J7-19
+Added Pin To Net: NetName=PD2 Pin=J7-21

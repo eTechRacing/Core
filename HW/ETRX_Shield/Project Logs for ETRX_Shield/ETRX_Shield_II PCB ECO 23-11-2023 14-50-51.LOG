@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=PA6 Pin=J4-1
+Removed Pin From Net: NetName=PA4 Pin=J4-2
+Removed Pin From Net: NetName=PA7 Pin=J4-3
+Removed Pin From Net: NetName=PA5 Pin=J4-4
+Removed Pin From Net: NetName=LED_PE2 Pin=J4-27
+Added Pin To Net: NetName=PA7 Pin=J4-1
+Added Pin To Net: NetName=PA5 Pin=J4-2
+Added Pin To Net: NetName=PA6 Pin=J4-3
+Added Pin To Net: NetName=PA4 Pin=J4-4
+Added Pin To Net: NetName=LED_PE2 Pin=J4-28

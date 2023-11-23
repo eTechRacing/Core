@@ -576,6 +576,23 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=AIGQAEZV
 
+[Document32]
+DocumentPath=ETRX_Shield_II.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=FAPJSCCS
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for ETRX_Shield\Design Rule Check - ETRX_Shield.html
 DItemRevisionGUID=

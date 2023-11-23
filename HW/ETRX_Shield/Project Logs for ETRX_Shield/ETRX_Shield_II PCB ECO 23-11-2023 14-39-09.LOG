@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=VSSA Pin=J4-19
+Removed Pin From Net: NetName=VREFA Pin=J4-21
+Removed Pin From Net: NetName=VDDA Pin=J4-23
+Removed Pin From Net: NetName=PA6 Pin=J4-25
+Removed Pin From Net: NetName=PA7 Pin=J4-27
+Added Pin To Net: NetName=VSSA Pin=J4-3
+Added Pin To Net: NetName=VREFA Pin=J4-5
+Added Pin To Net: NetName=VDDA Pin=J4-7
+Added Pin To Net: NetName=PA6 Pin=J4-9
+Added Pin To Net: NetName=PA7 Pin=J4-11
