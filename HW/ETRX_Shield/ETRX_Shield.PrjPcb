@@ -602,70 +602,74 @@ DocumentPath=Project Outputs for ETRX_Shield\Design Rule Check - ETRX_Shield_gra
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for ETRX_Shield\NC Drill\ETRX_Shield.DRR
+DocumentPath=Project Outputs for ETRX_Shield\Design Rule Check - ETRX_Shield_II.html
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.EXTREP
+DocumentPath=Project Outputs for ETRX_Shield\NC Drill\ETRX_Shield.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.G1
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.G2
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.G1
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBL
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.G2
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBO
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBP
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBS
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GM
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTL
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GM
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTO
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTP
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTS
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for ETRX_Shield\NC Drill\ETRX_Shield.LDP
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.REP
+DocumentPath=Project Outputs for ETRX_Shield\NC Drill\ETRX_Shield.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for ETRX_Shield\ExportSTEP\ETRX_Shield.step
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.REP
 DItemRevisionGUID=
 
 [GeneratedDocument19]
+DocumentPath=Project Outputs for ETRX_Shield\ExportSTEP\ETRX_Shield.step
+DItemRevisionGUID=
+
+[GeneratedDocument20]
 DocumentPath=Project Outputs for ETRX_Shield\NC Drill\ETRX_Shield.TXT
 DItemRevisionGUID=
 
