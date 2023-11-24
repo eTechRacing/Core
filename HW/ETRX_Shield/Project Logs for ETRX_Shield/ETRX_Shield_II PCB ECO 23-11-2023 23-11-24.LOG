@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=LV tr Pin=J7-5
+Removed Pin From Net: NetName=LV tr Pin=J7-7
+Removed Pin From Net: NetName=LV tr Pin=J7-9
+Added Pin To Net: NetName=LV tr Pin=J6-9
+Added Pin To Net: NetName=LV tr Pin=J6-11
