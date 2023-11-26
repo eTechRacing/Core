@@ -1,0 +1,3 @@
+Removed Pin From Net: NetName=PB3 Pin=J8-1
+Removed Member From Class: ClassName=ETRX_Shield Member=J8
+Added Pin To Net: NetName=PB3 Pin=J3-6
