@@ -1,0 +1,15 @@
+Change Component Designator: OldDesignator=J? NewDesignator=J4_
+Change Component Designator: OldDesignator=J? NewDesignator=J4_
+Change Component Designator: OldDesignator=J? NewDesignator=J5
+Change Component Designator: OldDesignator=J? NewDesignator=J5_
+Change Component Designator: OldDesignator=J? NewDesignator=J6
+Change Component Designator: OldDesignator=J? NewDesignator=J6_
+Change Component Designator: OldDesignator=J? NewDesignator=J7
+Change Component Designator: OldDesignator=J? NewDesignator=J7_
+Added Member To Class: ClassName=Carrier_I Member=Component J4_ 62332821021
+Added Member To Class: ClassName=Carrier_I Member=Component J4_ 61002821821
+Added Member To Class: ClassName=Carrier_I Member=Component J5 62332821021
+Added Member To Class: ClassName=Carrier_I Member=Component J6_ 61002821821
+Added Member To Class: ClassName=Carrier_I Member=Component J6 62332821021
+Added Member To Class: ClassName=Carrier_I Member=Component J7_ 61002821821
+Added Member To Class: ClassName=Carrier_I Member=Component J7 62332821021
