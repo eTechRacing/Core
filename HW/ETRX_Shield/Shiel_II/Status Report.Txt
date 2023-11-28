@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [ETRX_Shield_II.PcbDoc]
+   Generated File[ETRX_Shield_II.TXT]
+   Generated File[ETRX_Shield_II.LDP]
+   Generated File[ETRX_Shield_II.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 17:24:39 On 28/11/2023
