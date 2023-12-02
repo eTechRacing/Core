@@ -1,0 +1,142 @@
+*************************************************************
+FileName = Carrier_I_PCB.GBR
+AutoAperture = True
+*************************************************************
+Generating : Mechanical 1
+      File : Carrier_I_PCB.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D22
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : Carrier_I_PCB.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : Carrier_I_PCB.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D12
+    D13
+    D14
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Carrier_I_PCB.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D19
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Carrier_I_PCB.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D16
+    D17
+    D18
+    D19
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Carrier_I_PCB.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : Carrier_I_PCB.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : Carrier_I_PCB.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D20
+    D21
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : Carrier_I_PCB.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D12
+    D13
+    D14
+    D20
+    D21
+*************************************************************
+
+*************************************************************
+Generating : Profile
+      File : Carrier_I_PCB.GM
+
+
+Used DCodes :
+    D23
+*************************************************************
+
