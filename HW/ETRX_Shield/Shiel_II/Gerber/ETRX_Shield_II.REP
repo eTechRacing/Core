@@ -2,78 +2,6 @@
 FileName = ETRX_Shield_II.GBR
 AutoAperture = True
 *************************************************************
-Generating : Mechanical 1
-      File : ETRX_Shield_II.GM1
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D11
-*************************************************************
-
-*************************************************************
-Generating : Bottom Paste
-      File : ETRX_Shield_II.GBP
-
-    Adding Layer      : Bottom Paste
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D19
-    D21
-    D28
-    D32
-    D89
-    D90
-    D91
-    D92
-*************************************************************
-
-*************************************************************
-Generating : Top Paste
-      File : ETRX_Shield_II.GTP
-
-    Adding Layer      : Top Paste
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D17
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
-    D34
-    D35
-    D36
-    D37
-    D38
-    D39
-    D40
-    D41
-*************************************************************
-
-*************************************************************
 Generating : Bottom Solder
       File : ETRX_Shield_II.GBS
 
@@ -101,10 +29,88 @@ Used DCodes :
     D75
     D76
     D77
-    D93
-    D94
+    D78
     D95
     D96
+    D97
+    D98
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : ETRX_Shield_II.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D15
+*************************************************************
+
+*************************************************************
+Generating : PWR
+      File : ETRX_Shield_II.G2
+
+    Adding Layer      : PWR
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D15
+    D24
+    D68
+    D73
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : ETRX_Shield_II.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : ETRX_Shield_II.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D19
+    D21
+    D28
+    D32
+    D91
+    D92
+    D93
+    D94
 *************************************************************
 
 *************************************************************
@@ -155,120 +161,7 @@ Used DCodes :
     D75
     D76
     D77
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : ETRX_Shield_II.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-    D15
-*************************************************************
-
-*************************************************************
-Generating : Top Overlay
-      File : ETRX_Shield_II.GTO
-
-    Adding Layer      : Top Overlay
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D14
-    D15
-    D16
-*************************************************************
-
-*************************************************************
-Generating : Bottom Layer
-      File : ETRX_Shield_II.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D10
-    D12
-    D15
-    D19
-    D21
-    D24
-    D28
-    D32
-    D68
-    D73
-    D79
-    D80
-    D81
-    D82
-    D83
-    D84
-    D85
-    D86
-    D87
-    D88
-    D89
-    D90
-    D91
-    D92
-*************************************************************
-
-*************************************************************
-Generating : PWR
-      File : ETRX_Shield_II.G2
-
-    Adding Layer      : PWR
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D12
-    D15
-    D24
-    D68
-    D73
-    D80
-    D81
-    D82
-    D83
-    D84
-    D85
-    D86
-    D87
-    D88
-*************************************************************
-
-*************************************************************
-Generating : GND
-      File : ETRX_Shield_II.G1
-
-    Adding Layer      : GND
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D24
-    D68
-    D73
-    D80
-    D81
-    D82
-    D83
-    D84
-    D85
-    D86
-    D87
-    D88
+    D78
 *************************************************************
 
 *************************************************************
@@ -311,7 +204,6 @@ Used DCodes :
     D41
     D68
     D73
-    D78
     D79
     D80
     D81
@@ -322,6 +214,120 @@ Used DCodes :
     D86
     D87
     D88
+    D89
+    D90
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : ETRX_Shield_II.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D11
+*************************************************************
+
+*************************************************************
+Generating : GND
+      File : ETRX_Shield_II.G1
+
+    Adding Layer      : GND
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D24
+    D68
+    D73
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : ETRX_Shield_II.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : ETRX_Shield_II.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D12
+    D15
+    D19
+    D21
+    D24
+    D28
+    D32
+    D68
+    D73
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
 *************************************************************
 
 *************************************************************
@@ -330,6 +336,6 @@ Generating : Profile
 
 
 Used DCodes :
-    D97
+    D99
 *************************************************************
 
