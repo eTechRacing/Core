@@ -1,0 +1,3 @@
+Change Footprint: Footprint Not Found J_PINHEADER_1x3
+Change Component Comment : Designator=J101 Old Comment=282836-3 New Comment=3 pin header
+Change component parameters: Designator = "J101" ("J101"); Footprint = "J_screw_1x3"; UniqueID = "\PNBGJTEO\QQNDAGCY" ("\PNBGJTEO\QQNDAGCY")
