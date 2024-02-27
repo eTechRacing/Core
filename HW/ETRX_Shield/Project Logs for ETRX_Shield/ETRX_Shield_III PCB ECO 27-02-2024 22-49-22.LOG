@@ -1,0 +1,19 @@
+Removed Pin From Net: NetName=GND Pin=Q301-E
+Removed Pin From Net: NetName=GND Pin=Q302-E
+Removed Pin From Net: NetName=+5 Pin=R305-1
+Removed Pin From Net: NetName=CAN1_TX Pin=R306-1
+Removed Pin From Net: NetName=GND Pin=R307-2
+Removed Pin From Net: NetName=+5 Pin=R308-1
+Removed Pin From Net: NetName=CAN2_TX Pin=R309-1
+Removed Pin From Net: NetName=GND Pin=R310-2
+Removed Member From Class: ClassName=[3] CAN Member=Q301
+Removed Member From Class: ClassName=[3] CAN Member=Q302
+Removed Member From Class: ClassName=[3] CAN Member=R307
+Removed Member From Class: ClassName=[3] CAN Member=R308
+Removed Member From Class: ClassName=[3] CAN Member=R309
+Removed Member From Class: ClassName=[3] CAN Member=R310
+Change Component Designator: OldDesignator=R308 NewDesignator=R306
+Added Pin To Net: NetName=GND Pin=D301-K
+Added Pin To Net: NetName=GND Pin=D302-K
+Added Pin To Net: NetName=CAN1_TX Pin=R305-1
+Added Pin To Net: NetName=CAN2_TX Pin=R306-1
