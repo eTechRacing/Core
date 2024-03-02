@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=5V supply Pin=TP103-1
+Removed Pin From Net: NetName=+3.3 Pin=TP104-1
+Removed Member From Class: ClassName=[1] Supply Member=TP103
+Removed Member From Class: ClassName=[1] Supply Member=TP104

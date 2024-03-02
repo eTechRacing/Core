@@ -1,0 +1,66 @@
+Removed Pin From Net: NetName=CAN1_TX Pin=Q303-D
+Removed Pin From Net: NetName=+3.3 Pin=Q303-G
+Removed Pin From Net: NetName=CAN1_RX Pin=Q304-D
+Removed Pin From Net: NetName=+3.3 Pin=Q304-G
+Removed Pin From Net: NetName=CAN2_TX Pin=Q305-D
+Removed Pin From Net: NetName=+3.3 Pin=Q305-G
+Removed Pin From Net: NetName=CAN2_RX Pin=Q306-D
+Removed Pin From Net: NetName=+3.3 Pin=Q306-G
+Removed Pin From Net: NetName=+3.3 Pin=R311-1
+Removed Pin From Net: NetName=+5 Pin=R312-1
+Removed Pin From Net: NetName=CAN1_TX Pin=R312-2
+Removed Pin From Net: NetName=+3.3 Pin=R313-1
+Removed Pin From Net: NetName=+5 Pin=R314-1
+Removed Pin From Net: NetName=CAN1_RX Pin=R314-2
+Removed Pin From Net: NetName=+3.3 Pin=R315-1
+Removed Pin From Net: NetName=+5 Pin=R316-1
+Removed Pin From Net: NetName=CAN2_TX Pin=R316-2
+Removed Pin From Net: NetName=+3.3 Pin=R317-1
+Removed Pin From Net: NetName=+5 Pin=R318-1
+Removed Pin From Net: NetName=CAN2_RX Pin=R318-2
+Removed Pin From Net: NetName=OSC_OUT Pin=XTAL201-1
+Removed Pin From Net: NetName=OSC_IN Pin=XTAL201-2
+Removed Member From Class: ClassName=[3] CAN Member=Q303
+Removed Member From Class: ClassName=[3] CAN Member=Q304
+Removed Member From Class: ClassName=[3] CAN Member=Q305
+Removed Member From Class: ClassName=[3] CAN Member=Q306
+Removed Member From Class: ClassName=[3] CAN Member=R311
+Removed Member From Class: ClassName=[3] CAN Member=R312
+Removed Member From Class: ClassName=[3] CAN Member=R313
+Removed Member From Class: ClassName=[3] CAN Member=R314
+Removed Member From Class: ClassName=[3] CAN Member=R315
+Removed Member From Class: ClassName=[3] CAN Member=R316
+Removed Member From Class: ClassName=[3] CAN Member=R317
+Removed Member From Class: ClassName=[3] CAN Member=R318
+Change Footprint: Footprint Not Found XTAL_CFPX-104_5_3.2
+Change Component Comment : Designator=XTAL201 Old Comment=830028710 New Comment=20MHz
+Change component parameters: Designator = "XTAL201" ("XTAL201"); Footprint = "XTAL20M_SMD"; UniqueID = "\QYUJLQUE\ATOVEEQO" ("\QYUJLQUE\ATOVEEQO")
+Change component parameters (AddParameter): Name = "Case/Size Code"; Value = "CFPX-104"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Category"; Value = "Crystals"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "Website Link"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.we-online.com/redexpert/article/830056808?ad"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet Link"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.we-online.com/redexpert/spec/830056808?ad"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Frequency"; Value = "20MHz"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Frequency Stability"; Value = "+/-30ppm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Frequency Tolerance"; Value = "+/-20ppm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "1mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Length"; Value = "5mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Load Capacitance"; Value = "18pF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "830056808"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Match Code"; Value = "WE-XTAL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Operating Temperature Max"; Value = "85°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Operating Temperature Min"; Value = "-40°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Width"; Value = "3.2mm"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=CAN2_RX Pin=U201-51
+Added Pin To Net: NetName=CAN2_TX Pin=U201-52
+Added Pin To Net: NetName=CAN1_RX Pin=U201-81
+Added Pin To Net: NetName=CAN1_TX Pin=U201-82
+Added Pin To Net: NetName=OSC_IN Pin=XTAL201-1
+Added Pin To Net: NetName=GND Pin=XTAL201-2
+Add Pin To Net: Unknown Pin: Pin XTAL201-3
+Add Pin To Net: Unknown Pin: Pin XTAL201-4
+Added Member To Class: ClassName=[3] CAN Member=Component R306 CR0805-FX-4700GLF

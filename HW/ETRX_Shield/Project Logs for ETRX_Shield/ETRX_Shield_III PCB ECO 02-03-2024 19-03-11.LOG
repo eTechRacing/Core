@@ -1,0 +1,3 @@
+Change Component Footprint: Designator=XTAL201 Old Footprint=XTAL20M_SMD New Footprint=XTAL_CFPX-104_5_3.2
+Added Pin To Net: NetName=OSC_OUT Pin=XTAL201-3
+Added Pin To Net: NetName=GND Pin=XTAL201-4
