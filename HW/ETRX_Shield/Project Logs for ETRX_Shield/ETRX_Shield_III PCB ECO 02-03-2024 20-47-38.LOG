@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=LV tr Pin=J6-3
+Removed Pin From Net: NetName=LV tr Pin=J6-5
+Removed Pin From Net: NetName=LV tr Pin=J6-7
+Removed Pin From Net: NetName=LV tr Pin=J6-9
+Removed Pin From Net: NetName=LV tr Pin=J6-11
+Added Pin To Net: NetName=+3.3 Pin=J4-7
+Added Pin To Net: NetName=+3.3 Pin=J4-9
+Added Pin To Net: NetName=GND Pin=J4-17
+Added Pin To Net: NetName=GND Pin=J4-19
+Added Pin To Net: NetName=GND Pin=J5-24
+Added Pin To Net: NetName=GND Pin=J5-26
+Added Pin To Net: NetName=+3.3 Pin=J6-3
+Added Pin To Net: NetName=+3.3 Pin=J6-5
+Added Pin To Net: NetName=GND Pin=J6-25
+Added Pin To Net: NetName=GND Pin=J6-27
