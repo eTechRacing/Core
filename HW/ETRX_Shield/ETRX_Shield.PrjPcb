@@ -640,70 +640,74 @@ DocumentPath=Project Outputs for ETRX_Shield\Design Rule Check - ETRX_Shield_II.
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for ETRX_Shield\NC Drill\ETRX_Shield.DRR
+DocumentPath=Project Outputs for ETRX_Shield\Design Rule Check - ETRX_Shield_III.html
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.EXTREP
+DocumentPath=Project Outputs for ETRX_Shield\NC Drill\ETRX_Shield.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.G1
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.G2
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.G1
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBL
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.G2
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBO
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBP
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBS
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GM
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTL
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GM
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTO
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTP
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTS
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for ETRX_Shield\NC Drill\ETRX_Shield.LDP
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.REP
+DocumentPath=Project Outputs for ETRX_Shield\NC Drill\ETRX_Shield.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for ETRX_Shield\ExportSTEP\ETRX_Shield.step
+DocumentPath=Project Outputs for ETRX_Shield\Gerber\ETRX_Shield.REP
 DItemRevisionGUID=
 
 [GeneratedDocument20]
+DocumentPath=Project Outputs for ETRX_Shield\ExportSTEP\ETRX_Shield.step
+DItemRevisionGUID=
+
+[GeneratedDocument21]
 DocumentPath=Project Outputs for ETRX_Shield\NC Drill\ETRX_Shield.TXT
 DItemRevisionGUID=
 
@@ -1375,36 +1379,6 @@ OutputName12=Web Review Data
 OutputDocumentPath12=
 OutputVariantName12=
 OutputDefault12=0
-OutputType13=Ansoft Neutral
-OutputName13=Ansoft Neutral (AutoPCB)
-OutputDocumentPath13=
-OutputVariantName13=
-OutputDefault13=0
-OutputType14=HyperLynx
-OutputName14=HyperLynx (AutoPCB)
-OutputDocumentPath14=
-OutputVariantName14=
-OutputDefault14=0
-OutputType15=Orcad v7 Capture Design
-OutputName15=Orcad v7 Capture Design (AutoSCH)
-OutputDocumentPath15=
-OutputVariantName15=
-OutputDefault15=0
-OutputType16=P-CAD ASCII
-OutputName16=P-CAD ASCII (AutoPCB)
-OutputDocumentPath16=
-OutputVariantName16=
-OutputDefault16=0
-OutputType17=P-CAD V16 Schematic Design
-OutputName17=P-CAD V16 Schematic Design (AutoSCH)
-OutputDocumentPath17=
-OutputVariantName17=
-OutputDefault17=0
-OutputType18=SiSoft
-OutputName18=SiSoft (AutoPCB)
-OutputDocumentPath18=
-OutputVariantName18=
-OutputDefault18=0
 
 [OutputGroup10]
 Name=PostProcess Outputs
