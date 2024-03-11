@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=CAN2_H Pin=J6-25
+Removed Pin From Net: NetName=CAN2_L Pin=J6-27
+Added Pin To Net: NetName=CAN2_L Pin=J6-25
+Added Pin To Net: NetName=CAN2_H Pin=J6-27
+Added Member To Class: ClassName=[2] MCU Member=Component C210 GRM219R61A475KE34D

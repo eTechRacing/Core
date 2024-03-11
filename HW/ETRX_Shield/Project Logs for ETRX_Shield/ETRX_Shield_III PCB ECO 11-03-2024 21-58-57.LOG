@@ -1,0 +1,59 @@
+Removed Pin From Net: NetName=+3.3 Pin=C210-1
+Removed Pin From Net: NetName=GND Pin=C210-2
+Removed Pin From Net: NetName=+3.3 Pin=C211-1
+Removed Pin From Net: NetName=GND Pin=C211-2
+Removed Pin From Net: NetName=+3.3 Pin=C212-1
+Removed Pin From Net: NetName=GND Pin=C212-2
+Removed Pin From Net: NetName=+3.3 Pin=C213-1
+Removed Pin From Net: NetName=GND Pin=C213-2
+Removed Pin From Net: NetName=+3.3 Pin=C214-1
+Removed Pin From Net: NetName=GND Pin=C214-2
+Removed Pin From Net: NetName=+3.3 Pin=C215-1
+Removed Pin From Net: NetName=GND Pin=C215-2
+Removed Pin From Net: NetName=+3.3 Pin=C216-1
+Removed Pin From Net: NetName=GND Pin=C216-2
+Removed Pin From Net: NetName=+3.3 Pin=C217-1
+Removed Pin From Net: NetName=GND Pin=C217-2
+Removed Pin From Net: NetName=+3.3 Pin=C218-1
+Removed Pin From Net: NetName=GND Pin=C218-2
+Removed Pin From Net: NetName=+3.3 Pin=C219-1
+Removed Pin From Net: NetName=GND Pin=C219-2
+Removed Pin From Net: NetName=+3.3 Pin=C220-1
+Removed Pin From Net: NetName=GND Pin=C220-2
+Removed Pin From Net: NetName=+3.3 Pin=C221-1
+Removed Pin From Net: NetName=GND Pin=C221-2
+Removed Pin From Net: NetName=+3.3 Pin=C222-1
+Removed Pin From Net: NetName=GND Pin=C222-2
+Removed Pin From Net: NetName=+3.3 Pin=C223-1
+Removed Pin From Net: NetName=GND Pin=C223-2
+Removed Pin From Net: NetName=+3.3 Pin=C224-1
+Removed Pin From Net: NetName=GND Pin=C224-2
+Removed Pin From Net: NetName=+5 Pin=J6-19
+Removed Pin From Net: NetName=GND Pin=J6-25
+Removed Pin From Net: NetName=GND Pin=J6-27
+Removed Pin From Net: NetName=+3.3 Pin=J7-1
+Removed Pin From Net: NetName=LV tr Pin=J7-3
+Removed Member From Class: ClassName=[2] MCU Member=C211
+Removed Member From Class: ClassName=[2] MCU Member=C212
+Removed Member From Class: ClassName=[2] MCU Member=C213
+Removed Member From Class: ClassName=[2] MCU Member=C214
+Removed Member From Class: ClassName=[2] MCU Member=C215
+Removed Member From Class: ClassName=[2] MCU Member=C216
+Removed Member From Class: ClassName=[2] MCU Member=C217
+Removed Member From Class: ClassName=[2] MCU Member=C218
+Removed Member From Class: ClassName=[2] MCU Member=C219
+Removed Member From Class: ClassName=[2] MCU Member=C220
+Removed Member From Class: ClassName=[2] MCU Member=C221
+Removed Member From Class: ClassName=[2] MCU Member=C222
+Removed Member From Class: ClassName=[2] MCU Member=C223
+Removed Member From Class: ClassName=[2] MCU Member=C224
+Removed Member From Class: ClassName=[2] MCU Member=C229
+Change Component Designator: OldDesignator=C229 NewDesignator=C210
+Added Pin To Net: NetName=+5 Pin=J6-13
+Added Pin To Net: NetName=GND Pin=J6-19
+Added Pin To Net: NetName=GND Pin=J6-21
+Added Pin To Net: NetName=CAN2_H Pin=J6-25
+Added Pin To Net: NetName=CAN2_L Pin=J6-27
+Added Pin To Net: NetName=CAN1_H Pin=J7-1
+Added Pin To Net: NetName=+3.3 Pin=J7-2
+Added Pin To Net: NetName=CAN1_L Pin=J7-3
