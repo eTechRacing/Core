@@ -1,0 +1,78 @@
+Removed Pin From Net: NetName=NRST Pin=C3-1
+Removed Pin From Net: NetName=GND Pin=C3-2
+Removed Pin From Net: NetName=NetC101_1 Pin=C102-1
+Removed Pin From Net: NetName=LV tr Pin=C103-1
+Removed Pin From Net: NetName=GND Pin=C103-2
+Removed Pin From Net: NetName=NRST Pin=R1-1
+Removed Pin From Net: NetName=+3.3 Pin=R1-2
+Removed Member From Class: ClassName=ETRX_Shield Member=C3
+Removed Member From Class: ClassName=[1] Supply Member=C103
+Change Component Footprint: Designator=C101 Old Footprint=C0805FNPC-W New Footprint=C6.8n-2kV-1210FNPMLCC-X7R
+Change Component Footprint: Designator=C102 Old Footprint=C0805FNPC-W New Footprint=C6.8n-2kV-1210FNPMLCC-X7R
+Change Component Comment : Designator=C101 Old Comment=10uF New Comment=C1210C682KGRACAUTO
+Change Component Comment : Designator=C102 Old Comment=10uF New Comment=C1210C682KGRACAUTO
+Change Component Designator: OldDesignator=R4 NewDesignator=R2
+Change Component Designator: OldDesignator=R5 NewDesignator=R3
+Change component parameters: Designator = "C101" ("C101"); Footprint = "C0805FNPC-W"; UniqueID = "\PNBGJTEO\CGVTHQPQ" ("\PNBGJTEO\CGVTHQPQ")
+Change component parameters (AddParameter): Name = ".Creator"; Value = "DR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = ".PCBcheck"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = ".SCHcheck"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Capacitance"; Value = "47uF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case Code (Imperial)"; Value = "1210"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case Code (Metric)"; Value = "3225"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "1210"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Category"; Value = "Ceramic Capacitors"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.mouser.com/ds/2/212/KEM_C1010_X7R_HV_SMD-345925.pdf?src-supplier=Mouser"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.mouser.com/ds/2/212/KEM_C1010_X7R_HV_SMD-345925.pdf?src-supplier=Mouser"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Dielectric"; Value = "X7R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Length"; Value = "3.2mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "KEMET"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "C1210C682KGRACAUTO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = "125°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Quantity"; Value = "1000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pricing 1"; Value = "1=0,78000, 10=0,55500, 50=0,41940, 100=0,36530, 500=0,27060 (USD)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Stock 1"; Value = "1000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "399-C1210C682KGRACAUTOCT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Termination"; Value = "SMD/SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating (DC)"; Value = "2kV"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Weight"; Value = "0.000564oz"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Width"; Value = "2.5mm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C102" ("C102"); Footprint = "C0805FNPC-W"; UniqueID = "\PNBGJTEO\RBYVYQFE" ("\PNBGJTEO\RBYVYQFE")
+Change component parameters (AddParameter): Name = ".Creator"; Value = "DR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = ".PCBcheck"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = ".SCHcheck"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Capacitance"; Value = "47uF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case Code (Imperial)"; Value = "1210"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case Code (Metric)"; Value = "3225"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "1210"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Category"; Value = "Ceramic Capacitors"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.mouser.com/ds/2/212/KEM_C1010_X7R_HV_SMD-345925.pdf?src-supplier=Mouser"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.mouser.com/ds/2/212/KEM_C1010_X7R_HV_SMD-345925.pdf?src-supplier=Mouser"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Dielectric"; Value = "X7R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Length"; Value = "3.2mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "KEMET"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "C1210C682KGRACAUTO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = "125°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Quantity"; Value = "1000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pricing 1"; Value = "1=0,78000, 10=0,55500, 50=0,41940, 100=0,36530, 500=0,27060 (USD)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Stock 1"; Value = "1000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "399-C1210C682KGRACAUTOCT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Termination"; Value = "SMD/SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating (DC)"; Value = "2kV"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Weight"; Value = "0.000564oz"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Width"; Value = "2.5mm"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=LV tr Pin=C102-1
+Added Pin To Net: NetName=+3.3 Pin=R1-1
+Added Pin To Net: NetName=NRST Pin=R1-2
