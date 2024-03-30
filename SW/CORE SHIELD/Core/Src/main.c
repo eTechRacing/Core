@@ -19,10 +19,13 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
+#include "usb_device.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "string.h"
+#include "stdio.h"
+#include "usbd_cdc_if.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -32,7 +35,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define ADC_BUF_LEN 	3				//ADC buffer length
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -45,20 +48,16 @@ ADC_HandleTypeDef hadc1;
 DMA_HandleTypeDef hdma_adc1;
 
 CAN_HandleTypeDef hcan1;
+CAN_HandleTypeDef hcan2;
 
 UART_HandleTypeDef huart4;
-UART_HandleTypeDef huart5;
 
-PCD_HandleTypeDef hpcd_USB_OTG_FS;
-
-WWDG_HandleTypeDef hwwdg;
-
-/* Definitions for defaultTask */
-osThreadId_t defaultTaskHandle;
-const osThreadAttr_t defaultTask_attributes = {
-  .name = "defaultTask",
+/* Definitions for Maquina_Estats */
+osThreadId_t Maquina_EstatsHandle;
+const osThreadAttr_t Maquina_Estats_attributes = {
+  .name = "Maquina_Estats",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityRealtime7,
 };
 /* Definitions for CAN_TX */
 osThreadId_t CAN_TXHandle;
@@ -74,45 +73,33 @@ const osThreadAttr_t USB_TASK_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for MAQUINA_ESTATS */
-osThreadId_t MAQUINA_ESTATSHandle;
-const osThreadAttr_t MAQUINA_ESTATS_attributes = {
-  .name = "MAQUINA_ESTATS",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityHigh,
-};
-/* Definitions for ADC_READ */
-osThreadId_t ADC_READHandle;
-const osThreadAttr_t ADC_READ_attributes = {
-  .name = "ADC_READ",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
 /* USER CODE BEGIN PV */
-uint32_t value_adc;
-CAN_RxHeaderTypeDef 	RxHeader; 			//CAN Bus Transmit Header
-CAN_TxHeaderTypeDef 	TxHeader; 			//CAN Bus Receive Header
-uint8_t 				TxData[8];  		//CAN Bus Receive Buffer
-uint8_t 				RxData[8];  		//CAN Bus Receive Buffer
-CAN_FilterTypeDef 		canfil; 			//CAN Bus Filter
-uint32_t 				TxMailbox; 			//CAN Bus Mail box variable
+//CAN variables
+CAN_RxHeaderTypeDef 	RxHeader; 					//CAN Bus Transmit Header
+CAN_TxHeaderTypeDef 	TxHeader; 					//CAN Bus Receive Header
+uint8_t 				TxData[8];  				//CAN Bus Receive Buffer
+uint8_t 				RxData[8];  				//CAN Bus Receive Buffer
+CAN_FilterTypeDef 		canfil; 					//CAN Bus Filter
+uint32_t 				TxMailbox; 					//CAN Bus Mail box variable.
+
+
+//ADC variables
+uint16_t LECTURES_ADC[ADC_BUF_LEN];					//Where the data from the ADC is located, is the name of the buffer used by the ADC
+													//The number inside the claudators is the amount of channels used by the ADC
+char USB_TX[10];									//Buffer where the USB data is stored to be sent
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
-static void MX_WWDG_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_CAN1_Init(void);
 static void MX_UART4_Init(void);
-static void MX_UART5_Init(void);
-static void MX_USB_OTG_FS_PCD_Init(void);
-void StartDefaultTask(void *argument);
+static void MX_CAN2_Init(void);
+void Maquina_estats(void *argument);
 void CAN_Transmit(void *argument);
 void usb_data(void *argument);
-void maquina_estats(void *argument);
-void LECTURA_ADCs(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -130,6 +117,7 @@ void LECTURA_ADCs(void *argument);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+
 
   /* USER CODE END 1 */
 
@@ -152,56 +140,57 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  MX_WWDG_Init();
   MX_ADC1_Init();
   MX_CAN1_Init();
   MX_UART4_Init();
-  MX_UART5_Init();
-  MX_USB_OTG_FS_PCD_Init();
+  MX_CAN2_Init();
   /* USER CODE BEGIN 2 */
-  HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
-  HAL_ADC_Start_DMA(&hadc1,(uint32_t*)&value_adc,1);
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)LECTURES_ADC, ADC_BUF_LEN); //ADC with DMA initialization.
+  	  	  	  	  	  	  	  	  	  	  	  	  		//(&hadc1): The function uses the ADC 1
+	  	  	  	  										//LECTURES_ADC: It saves all the read data in the buffer
+  	  	  	  	  	  	  	  	  	  	  	  	  		//"ADC_BUF_LEN": Number of read channels by the ADC..
+//Receiving filter configuration
+  canfil.FilterBank = 0;								//This refers to which filter is being configured. On this case is the filter number 0
+  canfil.FilterMode = CAN_FILTERMODE_IDMASK;			//FilterMode: How are we filtering the incoming messages. Only the messages that coincide with the mask and the filter are accepted
+  canfil.FilterFIFOAssignment = CAN_RX_FIFO0;			//Defines at which FIFO is this filter being configured to. In this case is the FIFO 0.
+  canfil.FilterIdHigh = 0x0000;							//MSB: Most Significant Bit. When it's in 0, accepts all the messages
+  canfil.FilterIdLow = 0x0000;							//LSB: Least Significant Bit. When it's in 0, accepts all the messages
+  canfil.FilterMaskIdHigh = 0x0000;						//Most Significant Bit of the mask. When it's in 0, accepts all the messages
+  canfil.FilterMaskIdLow = 0x0000;						//Least Significant Bit of the mask. When it's in 0, accepts all the messages
+  canfil.FilterScale = CAN_FILTERSCALE_32BIT;			//Defines the Filter Scale. It will use the 32 bits of the mask and the identifier
+  canfil.FilterActivation = ENABLE;						//This activates the filter as it is enable
+  canfil.SlaveStartFilterBank = 14;						//Indicates the first filter slave number. In this case it is the principal filter.
 
-  canfil.FilterBank = 0;
-  canfil.FilterMode = CAN_FILTERMODE_IDMASK;
-  canfil.FilterFIFOAssignment = CAN_RX_FIFO0;
-  canfil.FilterIdHigh = 0x0000;						//Si està en 0 acceptem tots els missatges
-  canfil.FilterIdLow = 0x0000;						//Si està en 0 acceptem tots els missatges
-  canfil.FilterMaskIdHigh = 0x0000;
-  canfil.FilterMaskIdLow = 0x0000;
-  canfil.FilterScale = CAN_FILTERSCALE_32BIT;
-  canfil.FilterActivation = ENABLE;
-  canfil.SlaveStartFilterBank = 14;
-
-  if(HAL_CAN_ConfigFilter(&hcan1,&canfil) != HAL_OK)
+//CAN controller configuration
+  if(HAL_CAN_ConfigFilter(&hcan1,&canfil) != HAL_OK) 	//Configures the CAN controller filter
   {
-  	Error_Handler();
+  	Error_Handler();									//If the action goes wrong, call the Error_Handler function
   }
 
-  if (HAL_CAN_Start(&hcan1) != HAL_OK)
+  if (HAL_CAN_Start(&hcan1) != HAL_OK)					//Initiates the CAN controller
   {
-  	Error_Handler();
+  	Error_Handler();									//If the action goes wrong, call the Error_Handler function
   }
 
-  if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING | CAN_IT_TX_MAILBOX_EMPTY) != HAL_OK)
+  if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING | CAN_IT_TX_MAILBOX_EMPTY) != HAL_OK) //It activates the FIFO pending messages and empty mailboxes interruptions
       {
-      	Error_Handler();
+      	Error_Handler();								//If the action goes wrong, call the Error_Handler function
       }
 
-  TxHeader.DLC = 8; // Number of bites to be transmitted max- 8
-  TxHeader.IDE = CAN_ID_STD;
-  TxHeader.RTR = CAN_RTR_DATA;
-  TxHeader.StdId = 0x321;
-  TxHeader.StdId = 0x321;
-  TxHeader.TransmitGlobalTime = DISABLE;
-  TxData[0] = 1;
-  TxData[1] = 2;
-  TxData[2] = 3;
-  TxData[3] = 4;
-  TxData[4] = 5;
-  TxData[5] = 6;
-  TxData[6] = 7;
-  TxData[7] = 8;
+//Transmission configuration
+  TxHeader.DLC = 8; 									//Number of bites to be transmitted max- 8. DLC: Data Length Code
+  TxHeader.IDE = CAN_ID_STD;							//IDE: Identifier Extension. ID_STD: Standard Identifier. Dominant(0) = 11 bit ID, Recessive(1) = 29 bit ID
+  TxHeader.RTR = CAN_RTR_DATA;							//RTR: Remote Transmission Request, Dominant(0) = Data frame, Recessive (1) = Remote Frame. Type of trace
+  TxHeader.StdId = 0x321;								//Standard identifier ID
+  TxHeader.TransmitGlobalTime = DISABLE;				//A temporal mark in the CAN message is not added
+  TxData[0] = 1;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[1] = 2;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[2] = 3;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[3] = 4;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[4] = 5;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[5] = 6;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[6] = 7;										//Sent data. The TxData is the buffer where the data is saved
+  TxData[7] = 8;										//Sent data. The TxData is the buffer where the data is saved
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -224,20 +213,14 @@ int main(void)
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* creation of defaultTask */
-  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+  /* creation of Maquina_Estats */
+  Maquina_EstatsHandle = osThreadNew(Maquina_estats, NULL, &Maquina_Estats_attributes);
 
   /* creation of CAN_TX */
   CAN_TXHandle = osThreadNew(CAN_Transmit, NULL, &CAN_TX_attributes);
 
   /* creation of USB_TASK */
   USB_TASKHandle = osThreadNew(usb_data, NULL, &USB_TASK_attributes);
-
-  /* creation of MAQUINA_ESTATS */
-  MAQUINA_ESTATSHandle = osThreadNew(maquina_estats, NULL, &MAQUINA_ESTATS_attributes);
-
-  /* creation of ADC_READ */
-  ADC_READHandle = osThreadNew(LECTURA_ADCs, NULL, &ADC_READ_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -253,14 +236,24 @@ int main(void)
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
+  while (1)												//Main while
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox);
-	  HAL_Delay(500);
-	  TxData[7] = TxData[7] + 1;
+  	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, GPIO_PIN_SET);
+  	  HAL_Delay(100);
+  	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, GPIO_PIN_RESET);
+  	  HAL_Delay(100);
+	  	  HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox);	//Adds a message to the sending queue of the CAN controller
+	  	  HAL_Delay(500);													//Freertos delay of 500ms
+	  	  TxData[7] = TxData[7] + 1;									//Adds 1 to the seventh element of the TxData buffer each time the loop is repeated
+	  	  HAL_Delay(1);													//Freertos delay of 1ms
+	  	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, GPIO_PIN_SET);
+	  	  HAL_Delay(100);
+	  	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, GPIO_PIN_RESET);
+	  	  HAL_Delay(100);
+
   }
   /* USER CODE END 3 */
 }
@@ -277,7 +270,7 @@ void SystemClock_Config(void)
   /** Configure the main internal regulator output voltage
   */
   __HAL_RCC_PWR_CLK_ENABLE();
-  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
@@ -287,9 +280,9 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 10;
-  RCC_OscInitStruct.PLL.PLLN = 96;
+  RCC_OscInitStruct.PLL.PLLN = 216;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
-  RCC_OscInitStruct.PLL.PLLQ = 4;
+  RCC_OscInitStruct.PLL.PLLQ = 9;
   RCC_OscInitStruct.PLL.PLLR = 2;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
@@ -309,10 +302,10 @@ void SystemClock_Config(void)
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_7) != HAL_OK)
   {
     Error_Handler();
   }
@@ -347,7 +340,7 @@ static void MX_ADC1_Init(void)
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc1.Init.NbrOfConversion = 2;
+  hadc1.Init.NbrOfConversion = 3;
   hadc1.Init.DMAContinuousRequests = ENABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
@@ -357,7 +350,7 @@ static void MX_ADC1_Init(void)
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
-  sConfig.Channel = ADC_CHANNEL_TEMPSENSOR;
+  sConfig.Channel = ADC_CHANNEL_0;
   sConfig.Rank = ADC_REGULAR_RANK_1;
   sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -367,8 +360,17 @@ static void MX_ADC1_Init(void)
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
-  sConfig.Channel = ADC_CHANNEL_0;
+  sConfig.Channel = ADC_CHANNEL_1;
   sConfig.Rank = ADC_REGULAR_RANK_2;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_VBAT;
+  sConfig.Rank = ADC_REGULAR_RANK_3;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -417,6 +419,43 @@ static void MX_CAN1_Init(void)
 }
 
 /**
+  * @brief CAN2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_CAN2_Init(void)
+{
+
+  /* USER CODE BEGIN CAN2_Init 0 */
+
+  /* USER CODE END CAN2_Init 0 */
+
+  /* USER CODE BEGIN CAN2_Init 1 */
+
+  /* USER CODE END CAN2_Init 1 */
+  hcan2.Instance = CAN2;
+  hcan2.Init.Prescaler = 16;
+  hcan2.Init.Mode = CAN_MODE_NORMAL;
+  hcan2.Init.SyncJumpWidth = CAN_SJW_1TQ;
+  hcan2.Init.TimeSeg1 = CAN_BS1_1TQ;
+  hcan2.Init.TimeSeg2 = CAN_BS2_3TQ;
+  hcan2.Init.TimeTriggeredMode = DISABLE;
+  hcan2.Init.AutoBusOff = DISABLE;
+  hcan2.Init.AutoWakeUp = DISABLE;
+  hcan2.Init.AutoRetransmission = DISABLE;
+  hcan2.Init.ReceiveFifoLocked = DISABLE;
+  hcan2.Init.TransmitFifoPriority = DISABLE;
+  if (HAL_CAN_Init(&hcan2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN CAN2_Init 2 */
+
+  /* USER CODE END CAN2_Init 2 */
+
+}
+
+/**
   * @brief UART4 Initialization Function
   * @param None
   * @retval None
@@ -452,106 +491,6 @@ static void MX_UART4_Init(void)
 }
 
 /**
-  * @brief UART5 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_UART5_Init(void)
-{
-
-  /* USER CODE BEGIN UART5_Init 0 */
-
-  /* USER CODE END UART5_Init 0 */
-
-  /* USER CODE BEGIN UART5_Init 1 */
-
-  /* USER CODE END UART5_Init 1 */
-  huart5.Instance = UART5;
-  huart5.Init.BaudRate = 115200;
-  huart5.Init.WordLength = UART_WORDLENGTH_8B;
-  huart5.Init.StopBits = UART_STOPBITS_1;
-  huart5.Init.Parity = UART_PARITY_NONE;
-  huart5.Init.Mode = UART_MODE_TX_RX;
-  huart5.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart5.Init.OverSampling = UART_OVERSAMPLING_16;
-  huart5.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  huart5.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart5) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN UART5_Init 2 */
-
-  /* USER CODE END UART5_Init 2 */
-
-}
-
-/**
-  * @brief USB_OTG_FS Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USB_OTG_FS_PCD_Init(void)
-{
-
-  /* USER CODE BEGIN USB_OTG_FS_Init 0 */
-
-  /* USER CODE END USB_OTG_FS_Init 0 */
-
-  /* USER CODE BEGIN USB_OTG_FS_Init 1 */
-
-  /* USER CODE END USB_OTG_FS_Init 1 */
-  hpcd_USB_OTG_FS.Instance = USB_OTG_FS;
-  hpcd_USB_OTG_FS.Init.dev_endpoints = 6;
-  hpcd_USB_OTG_FS.Init.speed = PCD_SPEED_FULL;
-  hpcd_USB_OTG_FS.Init.dma_enable = DISABLE;
-  hpcd_USB_OTG_FS.Init.phy_itface = PCD_PHY_EMBEDDED;
-  hpcd_USB_OTG_FS.Init.Sof_enable = DISABLE;
-  hpcd_USB_OTG_FS.Init.low_power_enable = DISABLE;
-  hpcd_USB_OTG_FS.Init.lpm_enable = DISABLE;
-  hpcd_USB_OTG_FS.Init.vbus_sensing_enable = DISABLE;
-  hpcd_USB_OTG_FS.Init.use_dedicated_ep1 = DISABLE;
-  if (HAL_PCD_Init(&hpcd_USB_OTG_FS) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USB_OTG_FS_Init 2 */
-
-  /* USER CODE END USB_OTG_FS_Init 2 */
-
-}
-
-/**
-  * @brief WWDG Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_WWDG_Init(void)
-{
-
-  /* USER CODE BEGIN WWDG_Init 0 */
-
-  /* USER CODE END WWDG_Init 0 */
-
-  /* USER CODE BEGIN WWDG_Init 1 */
-
-  /* USER CODE END WWDG_Init 1 */
-  hwwdg.Instance = WWDG;
-  hwwdg.Init.Prescaler = WWDG_PRESCALER_1;
-  hwwdg.Init.Window = 64;
-  hwwdg.Init.Counter = 64;
-  hwwdg.Init.EWIMode = WWDG_EWI_DISABLE;
-  if (HAL_WWDG_Init(&hwwdg) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN WWDG_Init 2 */
-
-  /* USER CODE END WWDG_Init 2 */
-
-}
-
-/**
   * Enable DMA controller clock
   */
 static void MX_DMA_Init(void)
@@ -574,45 +513,72 @@ static void MX_DMA_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
 /* USER CODE BEGIN MX_GPIO_Init_1 */
 /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOH_CLK_ENABLE();
-  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : PA3 */
+  GPIO_InitStruct.Pin = GPIO_PIN_3;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan)
+void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan)		//Completed CAN transmission function
 {
-	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
+	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);								//It changes the LED state
 }
 
-void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)			//Received CAN function
 {
-	HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &RxHeader, RxData);
-	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
+	HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &RxHeader, RxData);		//Takes the data from the CAN channel
+																		//&hadc1: The function uses the ADC 1
+																		//CAN_RX_FIFO0: Where the received data is located, a FIFO, specifically the FIFO 0
+																		//&RxHeader: CAN Bus Transmit Header
+																		//RxData: The CAN Bus Receive Buffer
+	HAL_UART_Transmit(&huart4, RxData, strlen((char*)RxData), HAL_MAX_DELAY);
+	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);								//It changes the LED state
 }
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)					//Function called each time the ADC finished the conversions
+	  	  {
+
+	  	    sprintf(USB_TX, "%d %d %d\n", LECTURES_ADC[0], LECTURES_ADC[1],LECTURES_ADC[2]); 		//Creates an string from each read value
+	  	    																						//USB_TX: Is the buffer where the read and operated data is stored
+	  	    																						//%d\: Defines the type of variable, one for each saved variable
+	  	    																						//"LECTURES_ADC[X]": Defines each variable, it is defined by the position in the buffer.
+	  	    																						//Vbat channel works between 1.65V and 3.6V
+	  	    CDC_Transmit_FS((uint8_t*)USB_TX, strlen(USB_TX));										//Sends the USB_TX buffer through USB
+	  	  }
 /* USER CODE END 4 */
 
-/* USER CODE BEGIN Header_StartDefaultTask */
+/* USER CODE BEGIN Header_Maquina_estats */
 /**
-  * @brief  Function implementing the defaultTask thread.
+  * @brief  Function implementing the Maquina_Estats thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument)
+/* USER CODE END Header_Maquina_estats */
+void Maquina_estats(void *argument)
 {
+  /* init code for USB_DEVICE */
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
-  for(;;)									//En aquest loop s'introdueixen les funcions que es volen dur a terme
+  for(;;)												//Infinite loop
   {
     osDelay(1);
   }
@@ -630,9 +596,9 @@ void CAN_Transmit(void *argument)
 {
   /* USER CODE BEGIN CAN_Transmit */
   /* Infinite loop */
-  for(;;)
+  for(;;)															//Infinite loop
   {
-    osDelay(1);
+
   }
   /* USER CODE END CAN_Transmit */
 }
@@ -648,47 +614,11 @@ void usb_data(void *argument)
 {
   /* USER CODE BEGIN usb_data */
   /* Infinite loop */
-  for(;;)
+  for(;;)												//Infinite loop
   {
     osDelay(1);
   }
   /* USER CODE END usb_data */
-}
-
-/* USER CODE BEGIN Header_maquina_estats */
-/**
-* @brief Function implementing the MAQUINA_ESTATS thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_maquina_estats */
-void maquina_estats(void *argument)
-{
-  /* USER CODE BEGIN maquina_estats */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END maquina_estats */
-}
-
-/* USER CODE BEGIN Header_LECTURA_ADCs */
-/**
-* @brief Function implementing the ADC_READ thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_LECTURA_ADCs */
-void LECTURA_ADCs(void *argument)
-{
-  /* USER CODE BEGIN LECTURA_ADCs */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END LECTURA_ADCs */
 }
 
 /**
