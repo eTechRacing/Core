@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=NRST Pin=J3-2
+Removed Pin From Net: NetName=PB3 Pin=J3-4
+Removed Pin From Net: NetName=SWDIO Pin=J3-5
+Removed Pin From Net: NetName=SWCLK Pin=J3-7
+Change Component Footprint: Designator=J3 Old Footprint=STLINK_RJ45 New Footprint=J_STLink_PinHeader
+Change Component Comment : Designator=J3 Old Comment=STLink Wattius RJ45 New Comment=ST Link
+Added Pin To Net: NetName=SWCLK Pin=J3-2
+Added Pin To Net: NetName=SWDIO Pin=J3-4
+Added Pin To Net: NetName=NRST Pin=J3-5
+Added Pin To Net: NetName=PB3 Pin=J3-6
