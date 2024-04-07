@@ -198,7 +198,6 @@ Generating : Bottom Layer
 
 Used DCodes :
     D10
-    D17
     D20
     D21
     D29
@@ -220,6 +219,28 @@ Used DCodes :
     D96
     D97
     D98
+*************************************************************
+
+*************************************************************
+Generating : GND1
+      File : ETRX_Shield_III.G1
+
+    Adding Layer      : GND1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
 *************************************************************
 
 *************************************************************
@@ -256,7 +277,6 @@ Generating : Top Layer
 
 Used DCodes :
     D10
-    D17
     D18
     D19
     D20
@@ -287,28 +307,6 @@ Used DCodes :
     D82
     D83
     D84
-    D85
-    D86
-    D87
-    D88
-    D89
-    D90
-    D91
-    D92
-    D93
-    D94
-*************************************************************
-
-*************************************************************
-Generating : GND1
-      File : ETRX_Shield_III.G1
-
-    Adding Layer      : GND1
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
     D85
     D86
     D87
